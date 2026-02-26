@@ -34,27 +34,36 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 
 ---
 
+## To-Do List
+
+**See [TODO.md](./TODO.md)** for the full task list: what’s done and what’s left (CMS, auth, Mux, deployment, etc.). Update that file as work is completed.
+
+---
+
 ## What Has Been Done So Far
 
 - [x] Project plan and client-facing high-level document (`Nkata-ndi-Inyom-Rebuild-Plan.html`)
 - [x] Repository created and connected to GitHub
 - [x] Initial `.gitignore` for Node/Next.js
 - [x] Next.js app (App Router, TypeScript, Tailwind) and design system
-- [x] Layout: responsive Header, Footer, nav, skip link
+- [x] Theme and logo adopted from original site (blue/navy palette, `public/logo.png`)
+- [x] Layout: responsive Header (with logo), Footer, nav, skip link
 - [x] Home page (hero, initiatives, story, testimonial, CTA)
 - [x] Core pages: About, Offerings, Blog (list + post), Bookshelf (list + detail), Video library (list + detail), Events, Contact, Member area, Privacy
 - [ ] CMS integration and real content
 - [ ] Auth and member-only access
 - [ ] Mux video playback and bookshelf reader
 - [ ] Contact form and events/RSVP
+- [ ] Vercel deployment and Supabase (or DB) when needed
 
 ---
 
 ## For Future Maintainers
 
 1. **Read the plan** — [Nkata-ndi-Inyom-Rebuild-Plan.html](./Nkata-ndi-Inyom-Rebuild-Plan.html) describes vision, features, phases, and what the client needs to provide.
-2. **Update this README on every deploy** — Add a short entry to the **Deployment history** section below with date, version/tag if any, and what shipped or changed.
-3. **Keep the plan in sync** — If scope or phases change, update the plan document and/or this README so the next person has the full picture.
+2. **Use the to-do list** — [TODO.md](./TODO.md) tracks what’s done and what’s left; update it as you complete tasks.
+3. **Update this README on every deploy** — Add a short entry to the **Deployment history** section below with date, version/tag if any, and what shipped or changed.
+4. **Keep the plan in sync** — If scope or phases change, update the plan document, TODO.md, and/or this README so the next person has the full picture.
 
 ---
 
@@ -68,7 +77,9 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 
 | Date       | Version / Tag | Changes |
 |------------|----------------|---------|
-| 2025-02-26 | Framework     | Next.js 15 app: design system (Cormorant Garamond + Outfit, brand/accent colours), layout (Header, Footer, nav), Home + About, Offerings, Blog, Bookshelf, Video library, Events, Contact, Member, Privacy. Placeholder content; ready for CMS and assets. |
+| 2025-02-26 | Docs          | Added TODO.md with full task list (done vs to do). README updated: link to TODO.md, theme/logo in “What has been done”, Vercel/Supabase in remaining work, maintainer note to update TODO. |
+| 2025-02-26 | Theme & logo  | Adopted original site colors (blue #086afe, navy #031530) and logo; favicon from logo. |
+| 2025-02-26 | Framework     | Next.js 15 app: design system (Cormorant Garamond + Outfit, primary blue + navy), layout (Header, Footer, nav), Home + About, Offerings, Blog, Bookshelf, Video library, Events, Contact, Member, Privacy. Placeholder content; ready for CMS and assets. |
 | 2025-02-26 | —             | Repo setup: README, project plan (HTML), .gitignore; connected to GitHub. |
 
 ---
