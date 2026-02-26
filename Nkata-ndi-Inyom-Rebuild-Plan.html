@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nkata ndi Inyom Igbo — Website Rebuild Plan</title>
+  <style>
+    body { font-family: 'Calibri', 'Segoe UI', sans-serif; font-size: 11pt; line-height: 1.4; max-width: 800px; margin: 0 auto; padding: 40px; color: #222; }
+    h1 { font-size: 22pt; margin-bottom: 8px; color: #1a1a1a; border-bottom: 2px solid #333; padding-bottom: 8px; }
+    h2 { font-size: 14pt; margin-top: 24px; margin-bottom: 10px; color: #333; }
+    h3 { font-size: 12pt; margin-top: 16px; margin-bottom: 8px; color: #444; }
+    p { margin: 0 0 10px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+    th { background: #f0f0f0; font-weight: bold; }
+    ul { margin: 8px 0; padding-left: 24px; }
+    li { margin-bottom: 4px; }
+    .subtitle { font-size: 12pt; color: #555; margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+
+<h1>Nkata ndi Inyom Igbo — Website Rebuild</h1>
+<p class="subtitle">High-Level Plan (Client-Facing)</p>
+
+<h2>1. Vision</h2>
+<p>Build a new, secure, and user-friendly website that reflects Nkata ndi Inyom Igbo’s mission: empowering Igbo women, preserving culture, and strengthening community. The site will feel modern and trustworthy, and support members with a bookshelf, video library, blog, and other tools.</p>
+
+<h2>2. What We’re Building</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>New foundation</strong></td>
+      <td>Full rebuild (no WordPress). Modern, fast, secure technology chosen for long-term reliability and ease of updates.</td>
+    </tr>
+    <tr>
+      <td><strong>Bookshelf</strong></td>
+      <td>Digital library of books and resources. Members browse by category, search, and read in-browser where applicable. Access can be public for some items and members-only for others.</td>
+    </tr>
+    <tr>
+      <td><strong>Video library</strong></td>
+      <td>Curated video library (cultural content, talks, events) powered by <strong>Mux</strong>. Members get a dedicated space to watch; playback is smooth and works well on mobile. We use Mux’s free tier to start (e.g. 10 videos, generous viewing minutes per month) and can scale as the library grows.</td>
+    </tr>
+    <tr>
+      <td><strong>Blog</strong></td>
+      <td>Blog for stories, cultural pieces, leadership advice, event recaps, and member spotlights. Easy for your team to publish and update, with support for Igbo and English if desired.</td>
+    </tr>
+    <tr>
+      <td><strong>Member experience</strong></td>
+      <td>Secure sign-up and login. Members get access to bookshelf and video library, and can see their own activity (e.g. saved or in-progress items) in a simple dashboard.</td>
+    </tr>
+    <tr>
+      <td><strong>Additional features</strong></td>
+      <td>Event listings and RSVP, clear donation/membership calls-to-action, site-wide search, and mobile-friendly design. We aim for strong accessibility so the site is usable for as many people as possible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. Technology Choices (In Plain Terms)</h2>
+<ul>
+  <li><strong>Website platform:</strong> Next.js — fast, SEO-friendly, and well-suited for a content + member site.</li>
+  <li><strong>Content management:</strong> A headless CMS (e.g. Strapi or Sanity) so your team can edit blog posts, book metadata, video descriptions, and events without touching code.</li>
+  <li><strong>Video:</strong> Mux — professional streaming, reliable playback, and a free tier so we can launch the video library without upfront video hosting cost.</li>
+  <li><strong>Hosting &amp; database:</strong> Industry-standard hosting (e.g. Vercel) and a managed database (e.g. PostgreSQL via Supabase) for users, memberships, and app data.</li>
+  <li><strong>Security:</strong> HTTPS everywhere, secure login, role-based access (e.g. public vs member), and no direct exposure of private media links.</li>
+</ul>
+
+<h2>4. Security &amp; Privacy</h2>
+<ul>
+  <li>All pages and forms served over HTTPS.</li>
+  <li>Secure authentication and optional two-factor login for admins.</li>
+  <li>Member-only areas (e.g. bookshelf, video library) protected so only logged-in members can access them.</li>
+  <li>Video and premium content delivered through secure, time-limited links where applicable so they can’t be easily shared.</li>
+  <li>Clear privacy and cookie practices, with room for a proper privacy policy and consent where required.</li>
+</ul>
+
+<h2>5. User Experience Goals</h2>
+<ul>
+  <li><strong>Clear and welcoming</strong> — Homepage and key pages tell your story and make it obvious how to join, donate, or get involved.</li>
+  <li><strong>Easy to use</strong> — Simple navigation, search, and filters so visitors and members can find blog posts, books, and videos quickly.</li>
+  <li><strong>Mobile-first</strong> — The site will be designed to work well on phones and tablets.</li>
+  <li><strong>Inclusive</strong> — We’ll follow accessibility good practices so more people can use the site comfortably.</li>
+  <li><strong>Fast and reliable</strong> — Quick load times and stable streaming so the site feels responsive and trustworthy.</li>
+</ul>
+
+<h2>6. Suggested Phases</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Phase</th>
+      <th>Focus</th>
+      <th>Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Phase 1 — Foundation</strong></td>
+      <td>New site structure, design system, CMS setup, and blog. Member sign-up and login. Basic member area.</td>
+      <td>Live new site with blog and member access.</td>
+    </tr>
+    <tr>
+      <td><strong>Phase 2 — Bookshelf</strong></td>
+      <td>Catalog structure, metadata in CMS, in-browser reading where applicable, and member-only access rules.</td>
+      <td>Working bookshelf for members (and selected public items).</td>
+    </tr>
+    <tr>
+      <td><strong>Phase 3 — Video library</strong></td>
+      <td>Mux integration, video upload and metadata, member-only video pages, and a simple “continue watching” or list view.</td>
+      <td>Working video library for members.</td>
+    </tr>
+    <tr>
+      <td><strong>Phase 4 — Enhancements</strong></td>
+      <td>Events/calendar, member dashboard refinements, donations/membership flows, search, and any remaining features.</td>
+      <td>Full feature set and polish.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Phases can be adjusted (e.g. combine 2 and 3, or reorder) based on content readiness and priorities.</p>
+
+<h2>7. What We Need From You</h2>
+<ul>
+  <li><strong>Content:</strong> Final or draft text and structure for key pages (e.g. About, Offerings, Contact).</li>
+  <li><strong>Media:</strong> Logos, images, and any existing video or book assets (or a list of what will be ready when).</li>
+  <li><strong>Decisions:</strong> Who can edit the blog and catalog; whether some books/videos are public vs members-only; and any events or donation requirements.</li>
+  <li><strong>Access:</strong> Domain and any existing accounts (e.g. email, social) we need to align with.</li>
+</ul>
+
+<h2>8. Summary</h2>
+<p>We will deliver a <strong>new, non-WordPress website</strong> that is <strong>secure</strong>, <strong>fast</strong>, and <strong>easy to use</strong>, with:</p>
+<ul>
+  <li>A <strong>blog</strong> for stories and updates</li>
+  <li>A <strong>bookshelf</strong> for digital resources</li>
+  <li>A <strong>video library</strong> powered by <strong>Mux</strong> (free tier to start)</li>
+  <li><strong>Member-only access</strong> where needed</li>
+  <li><strong>Mobile-friendly</strong> and <strong>accessible</strong> design</li>
+  <li>A clear path to add <strong>events</strong>, <strong>donations</strong>, and <strong>search</strong> in later phases</li>
+</ul>
+
+</body>
+</html>
