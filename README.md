@@ -39,10 +39,14 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 - [x] Project plan and client-facing high-level document (`Nkata-ndi-Inyom-Rebuild-Plan.html`)
 - [x] Repository created and connected to GitHub
 - [x] Initial `.gitignore` for Node/Next.js
-- [ ] Next.js app and design system
-- [ ] CMS, auth, and member areas
-- [ ] Bookshelf and video library (Mux)
-- [ ] Blog and remaining features
+- [x] Next.js app (App Router, TypeScript, Tailwind) and design system
+- [x] Layout: responsive Header, Footer, nav, skip link
+- [x] Home page (hero, initiatives, story, testimonial, CTA)
+- [x] Core pages: About, Offerings, Blog (list + post), Bookshelf (list + detail), Video library (list + detail), Events, Contact, Member area, Privacy
+- [ ] CMS integration and real content
+- [ ] Auth and member-only access
+- [ ] Mux video playback and bookshelf reader
+- [ ] Contact form and events/RSVP
 
 ---
 
@@ -64,24 +68,22 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 
 | Date       | Version / Tag | Changes |
 |------------|----------------|---------|
+| 2025-02-26 | Framework     | Next.js 15 app: design system (Cormorant Garamond + Outfit, brand/accent colours), layout (Header, Footer, nav), Home + About, Offerings, Blog, Bookshelf, Video library, Events, Contact, Member, Privacy. Placeholder content; ready for CMS and assets. |
 | 2025-02-26 | —             | Repo setup: README, project plan (HTML), .gitignore; connected to GitHub. |
 
 ---
 
-## Local Development (When the App Exists)
-
-*(Placeholder — replace once the Next.js app is in place.)*
+## Local Development
 
 ```bash
 # Install dependencies
 npm install
 
-# Copy env example and set variables
-cp .env.example .env.local
-
-# Run dev server
+# Run dev server (with Turbopack)
 npm run dev
 ```
+
+Then open [http://localhost:3000](http://localhost:3000). For production build: `npm run build` then `npm start`. Add `.env.local` when you add CMS, auth, or Mux keys (see `.env.example` when added).
 
 ---
 
