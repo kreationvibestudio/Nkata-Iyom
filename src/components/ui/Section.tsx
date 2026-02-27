@@ -7,14 +7,14 @@ interface SectionProps {
   containerClassName?: string;
   /** Optional id for anchor links */
   id?: string;
-  /** Optional background: default, muted, accent-subtle */
-  variant?: "default" | "muted" | "accent-subtle";
+  /** Optional background: default, muted, primary-subtle */
+  variant?: "default" | "muted" | "primary-subtle";
 }
 
 const variantStyles = {
   default: "bg-surface",
   muted: "bg-surface-muted",
-  "accent-subtle": "bg-accent-50/40",
+  "primary-subtle": "bg-primary-50/60",
 };
 
 export function Section({

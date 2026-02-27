@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
+import { PageHero } from "@/components/layout/PageHero";
 
 export const metadata = {
   title: "Our Offerings",
@@ -32,18 +33,12 @@ const offerings = [
 export default function OfferingsPage() {
   return (
     <>
-      <section className="section-padding bg-brand-50/30 border-b border-brand-200/60">
-        <div className="container-narrow">
-          <h1 className="font-display text-display-lg text-brand-900 heading-balance max-w-2xl">
-            Our Offerings
-          </h1>
-          <p className="mt-4 text-lg text-brand-700 max-w-2xl">
-            Programs and initiatives that empower women and preserve Igbo culture.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Our Offerings"
+        description="Programs and initiatives that empower women and preserve Igbo culture."
+      />
 
-      <Section>
+      <Section variant="muted">
         <div className="space-y-12">
           {offerings.map((item, i) => (
             <article
@@ -66,7 +61,7 @@ export default function OfferingsPage() {
         </div>
       </Section>
 
-      <Section variant="muted">
+      <Section variant="primary-subtle">
         <div className="text-center">
           <p className="text-brand-700 mb-6">Want to get involved?</p>
           <ButtonLink href="/contact">Contact Us</ButtonLink>

@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { createClient } from "@/lib/supabase/server";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -29,23 +30,29 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
   },
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="min-h-screen flex flex-col">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-600 focus:text-white focus:rounded-md"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-500 focus:text-white focus:rounded-md"
         >
           Skip to main content
         </a>
-        <Header />
+        <Header signedIn={!!user} />
         <main id="main-content" className="flex-1">
           {children}
         </main>

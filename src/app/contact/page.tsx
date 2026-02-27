@@ -1,4 +1,6 @@
 import { Section } from "@/components/ui/Section";
+import { PageHero } from "@/components/layout/PageHero";
+import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata = {
   title: "Contact",
@@ -9,42 +11,52 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="section-padding bg-brand-50/30 border-b border-brand-200/60">
-        <div className="container-narrow">
-          <h1 className="font-display text-display-lg text-brand-900 heading-balance max-w-2xl">
-            Contact Us
-          </h1>
-          <p className="mt-4 text-lg text-brand-700 max-w-2xl">
-            Join our mission, inquire about events, or learn how you can get involved. We’d love to hear from you.
-          </p>
-        </div>
-      </section>
-
-      <Section>
+      <PageHero
+        title="Contact Us"
+        description="Join our mission, inquire about events, or learn how you can get involved. We'd love to hear from you."
+      />
+      <Section variant="muted">
         <div className="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
           <div>
-            <h2 className="font-display text-display-sm text-brand-900">Get in touch</h2>
+            <h2 className="font-display text-display-sm text-brand-900">We&apos;d Love to Hear from You</h2>
             <p className="mt-3 text-brand-700 leading-relaxed">
-              Contact form and contact details will be added when copy and preferences are provided. For now, this page establishes the layout and structure.
+              Have a question or want to get involved? Send us a message and we&apos;ll get back to you as soon as we can.
             </p>
             <div className="mt-8 space-y-4">
               <div className="p-4 rounded-lg bg-surface-muted border border-brand-200/60">
-                <p className="text-sm font-medium text-brand-600">Email</p>
-                <p className="text-brand-800">[Contact email to be added]</p>
+                <p className="text-sm font-medium text-brand-600">Address</p>
+                <p className="text-brand-800 whitespace-pre-line">
+                  3 Umueze Street
+                  {"\n"}Amawbia
+                  {"\n"}Awka South LGA
+                  {"\n"}Anambra State.
+                </p>
               </div>
               <div className="p-4 rounded-lg bg-surface-muted border border-brand-200/60">
-                <p className="text-sm font-medium text-brand-600">Location</p>
-                <p className="text-brand-800">[Location / address to be added]</p>
+                <p className="text-sm font-medium text-brand-600">Phone</p>
+                <p className="text-brand-800">
+                  <a href="tel:+2348033139506" className="text-primary-500 hover:text-primary-600">
+                    0803-313-9506
+                  </a>
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-surface-muted border border-brand-200/60">
+                <p className="text-sm font-medium text-brand-600">Email</p>
+                <p className="text-brand-800">
+                  <a href="mailto:enquiries@nkatandiinyom.com" className="text-primary-500 hover:text-primary-600">
+                    enquiries@nkatandiinyom.com
+                  </a>
+                </p>
               </div>
             </div>
           </div>
-          <div className="p-6 rounded-xl border border-brand-200/60 bg-surface-muted">
+          <div className="p-6 rounded-xl border border-brand-200/60 bg-surface">
             <h3 className="font-display text-lg text-brand-900">Send a message</h3>
             <p className="mt-2 text-sm text-brand-600">
-              Form fields (name, email, message, etc.) will be wired when design and backend are confirmed.
+              Fill in your details and we&apos;ll respond as soon as possible.
             </p>
-            <div className="mt-6 h-48 flex items-center justify-center text-brand-500 text-sm border border-dashed border-brand-300 rounded-lg">
-              [Contact form placeholder]
+            <div className="mt-6">
+              <ContactForm />
             </div>
           </div>
         </div>

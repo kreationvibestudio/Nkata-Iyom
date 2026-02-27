@@ -4,11 +4,10 @@
 
 @layer base {
   :root {
-    --color-brand-50: #faf8f5;
-    --color-brand-500: #a68b6a;
-    --color-brand-900: #524132;
-    --color-accent-500: #44826e;
-    --color-accent-600: #35685a;
+    --color-primary-500: #086afe;
+    --color-primary-600: #257af8;
+    --color-brand-900: #031530;
+    --color-brand-700: #374c6c;
   }
 
   html {
@@ -21,7 +20,7 @@
 
   /* Focus visible for accessibility */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-accent-500;
+    @apply outline-2 outline-offset-2 outline-primary-500;
   }
 }
 

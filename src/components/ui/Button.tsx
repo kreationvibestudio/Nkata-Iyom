@@ -5,13 +5,13 @@ type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent-600 text-white hover:bg-accent-700 focus-visible:ring-accent-500 shadow-sm",
+    "bg-primary-500 text-white hover:bg-primary-600 focus-visible:ring-primary-500 shadow-sm",
   secondary:
-    "bg-brand-700 text-white hover:bg-brand-800 focus-visible:ring-brand-500",
+    "bg-brand-800 text-white hover:bg-brand-900 focus-visible:ring-brand-500",
   outline:
-    "border-2 border-accent-600 text-accent-600 hover:bg-accent-50 focus-visible:ring-accent-500",
+    "border-2 border-primary-500 text-primary-500 hover:bg-primary-50 focus-visible:ring-primary-500",
   ghost:
-    "text-accent-600 hover:bg-accent-50 focus-visible:ring-accent-500",
+    "text-primary-500 hover:bg-primary-50 focus-visible:ring-primary-500",
 };
 
 interface BaseProps {

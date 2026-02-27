@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { SignOutButton } from "@/components/member/SignOutButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,18 +17,30 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export function Header() {
+interface HeaderProps {
+  signedIn?: boolean;
+}
+
+export function Header({ signedIn = false }: HeaderProps) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-brand-200/60 bg-surface/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 w-full border-b border-brand-200 bg-surface/95 backdrop-blur-sm">
       <div className="container-narrow flex h-16 items-center justify-between gap-6">
         <Link
           href="/"
-          className="font-display text-xl font-semibold text-brand-900 tracking-tight hover:text-brand-700 transition-colors"
+          className="flex items-center gap-3 font-display text-xl font-semibold text-brand-900 tracking-tight hover:text-primary-500 transition-colors"
         >
-          Nkata ndi Inyom Igbo
+          <Image
+            src="/logo.png"
+            alt="Nkata Ndi Inyom Igbo (NNII) — Partnering for Development"
+            width={56}
+            height={56}
+            className="h-12 w-12 sm:h-14 sm:w-14 object-contain shrink-0"
+            priority
+          />
+          <span className="hidden sm:inline">Nkata ndi Inyom Igbo</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
@@ -38,28 +52,29 @@ export function Header() {
                 href={href}
                 className={`relative px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   isActive
-                    ? "text-accent-600 bg-accent-50"
-                    : "text-brand-700 hover:text-accent-600 hover:bg-brand-50"
+                    ? "text-primary-500 bg-primary-50"
+                    : "text-brand-700 hover:text-primary-500 hover:bg-primary-50/50"
                 }`}
               >
                 {label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-0.5 bg-accent-500 rounded-full" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-0.5 bg-primary-500 rounded-full" />
                 )}
               </Link>
             );
           })}
           <Link
             href="/member"
-            className="ml-2 px-4 py-2 text-sm font-semibold text-white bg-accent-600 rounded-md hover:bg-accent-700 transition-colors"
+            className="ml-2 px-4 py-2 text-sm font-semibold text-white bg-primary-500 rounded-md hover:bg-primary-600 transition-colors"
           >
             Member area
           </Link>
+          {signedIn && <SignOutButton />}
         </nav>
 
         <button
           type="button"
-          className="md:hidden p-2 rounded-md text-brand-700 hover:bg-brand-100 aria-expanded={mobileOpen}"
+          className="md:hidden p-2 rounded-md text-brand-700 hover:bg-brand-100"
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
           aria-label="Toggle menu"
@@ -84,7 +99,7 @@ export function Header() {
 
       <div
         id="mobile-menu"
-        className={`md:hidden border-t border-brand-200/60 bg-surface ${mobileOpen ? "block" : "hidden"}`}
+        className={`md:hidden border-t border-brand-200 bg-surface ${mobileOpen ? "block" : "hidden"}`}
         aria-hidden={!mobileOpen}
       >
         <nav className="container-narrow py-4 flex flex-col gap-1" aria-label="Mobile navigation">
@@ -94,7 +109,7 @@ export function Header() {
               href={href}
               onClick={() => setMobileOpen(false)}
               className={`px-4 py-3 rounded-md text-sm font-medium ${
-                pathname === href ? "text-accent-600 bg-accent-50" : "text-brand-700 hover:bg-brand-50"
+                pathname === href ? "text-primary-500 bg-primary-50" : "text-brand-700 hover:bg-brand-50"
               }`}
             >
               {label}
@@ -103,10 +118,15 @@ export function Header() {
           <Link
             href="/member"
             onClick={() => setMobileOpen(false)}
-            className="mx-4 mt-2 px-4 py-3 text-center text-sm font-semibold text-white bg-accent-600 rounded-md"
+            className="mx-4 mt-2 px-4 py-3 text-center text-sm font-semibold text-white bg-primary-500 rounded-md"
           >
             Member area
           </Link>
+          {signedIn && (
+            <div className="px-4 py-3">
+              <SignOutButton />
+            </div>
+          )}
         </nav>
       </div>
     </header>

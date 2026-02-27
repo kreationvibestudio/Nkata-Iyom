@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mux/mux-node": "^12.8.1",
+    "@mux/mux-player-react": "^3.11.4",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.98.0",
     "next": "^15.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "resend": "^6.9.2"
   },
   "devDependencies": {
     "@types/node": "^22",
@@ -21,6 +26,7 @@
     "eslint-config-next": "^15.0.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^50.23.2"
   }
 }

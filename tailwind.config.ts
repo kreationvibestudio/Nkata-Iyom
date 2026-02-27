@@ -9,39 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary: warm, cultural, trustworthy
+        // From original nkatandiinyom.com (Astra theme)
+        // Primary blue: links, buttons, CTAs
+        primary: {
+          50: "#ebf5ff",
+          100: "#d6ebff",
+          200: "#b3d7ff",
+          300: "#80bfff",
+          400: "#4da6ff",
+          500: "#086afe",
+          600: "#257af8",
+          700: "#1a5fd4",
+          800: "#1549a8",
+          900: "#0f3380",
+          950: "#0a2050",
+        },
+        // Navy/slate: headings and body text (original color-2, color-3, color-8)
         brand: {
-          50: "#faf8f5",
-          100: "#f2ede6",
-          200: "#e6dccf",
-          300: "#d4c4b0",
-          400: "#bda88a",
-          500: "#a68b6a",
-          600: "#937558",
-          700: "#795f49",
-          800: "#634e3d",
-          900: "#524132",
-          950: "#2b2119",
+          50: "#f0f4f8",
+          100: "#e2e8f0",
+          200: "#cbd5e1",
+          300: "#94a3b8",
+          400: "#64748b",
+          500: "#94a3b8",
+          600: "#374c6c",
+          700: "#374c6c",
+          800: "#1e293b",
+          900: "#031530",
+          950: "#020c1a",
         },
-        // Accent: dignified, used for CTAs and highlights
-        accent: {
-          50: "#f0f7f4",
-          100: "#d9ebe3",
-          200: "#b6d6c9",
-          300: "#8ab9a8",
-          400: "#5f9d87",
-          500: "#44826e",
-          600: "#35685a",
-          700: "#2d554a",
-          800: "#27453d",
-          900: "#233a34",
-          950: "#112019",
-        },
-        // Neutrals for text and backgrounds
+        // Neutrals for backgrounds (original color-5 white, color-6 #e2e8f0)
         surface: {
-          DEFAULT: "#fafaf9",
-          muted: "#f5f5f4",
-          elevated: "#ffffff",
+          DEFAULT: "#ffffff",
+          muted: "#e2e8f0",
+          elevated: "#f8fafc",
         },
       },
       fontFamily: {

@@ -1,46 +1,112 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Section } from "@/components/ui/Section";
-import { ButtonLink } from "@/components/ui/Button";
+import { PageHero } from "@/components/layout/PageHero";
+import { createClient } from "@/lib/supabase/server";
+import { getProfile, hasMemberAccess } from "@/lib/profiles";
 
 export const metadata = {
   title: "Member area",
   description:
-    "Sign in to access the bookshelf, video library, and member resources.",
+    "Sign in to manage events, blog, books, and users. Admin and staff only.",
 };
 
-export default function MemberPage() {
-  return (
-    <>
-      <section className="section-padding bg-brand-50/30 border-b border-brand-200/60">
-        <div className="container-narrow">
-          <h1 className="font-display text-display-lg text-brand-900 heading-balance max-w-2xl">
-            Member area
-          </h1>
-          <p className="mt-4 text-lg text-brand-700 max-w-2xl">
-            Sign in to access the bookshelf, video library, and your dashboard. Auth will be connected in a later phase.
-          </p>
-        </div>
-      </section>
+interface MemberPageProps {
+  searchParams: Promise<{ redirect?: string; msg?: string }>;
+}
 
-      <Section>
-        <div className="max-w-md mx-auto text-center">
-          <div className="p-8 rounded-xl border border-brand-200/60 bg-surface">
-            <p className="text-brand-700 mb-6">
-              Login and registration will be wired with NextAuth or Clerk. For now, you can explore the public pages.
+export default async function MemberPage({ searchParams }: MemberPageProps) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  const profile = user ? await getProfile(user.id) : null;
+  const { redirect: redirectTo, msg } = await searchParams;
+
+  if (!user) {
+    redirect("/member/login" + (redirectTo ? "?redirect=" + encodeURIComponent(redirectTo) : ""));
+  }
+
+  if (!hasMemberAccess(profile)) {
+    return (
+      <>
+        <PageHero title="Member area" description="Sign in to manage the site." />
+        <Section variant="muted">
+          <div className="max-w-md mx-auto text-center p-8 rounded-xl border border-brand-200/60 bg-surface">
+            <p className="text-brand-700">
+              You don’t have access to the member area. Only users added by an administrator can sign in here.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ButtonLink href="/library">Browse Bookshelf</ButtonLink>
-              <ButtonLink href="/videos" variant="outline">Browse Videos</ButtonLink>
-            </div>
+            <p className="mt-4 text-sm text-brand-600">
+              Contact an administrator if you need access.
+            </p>
           </div>
-          <p className="mt-6 text-sm text-brand-600">
-            <Link href="/contact" className="text-accent-600 hover:text-accent-700 font-medium">
-              Contact us
-            </Link>{" "}
-            to inquire about membership.
+        </Section>
+      </>
+    );
+  }
+
+  return (
+    <div>
+      <h1 className="font-display text-display-md text-brand-900">Dashboard</h1>
+      <p className="mt-2 text-brand-700">
+        Add and edit content for the site. Use the links below or the menu above.
+      </p>
+      {msg && (
+        <p className="mt-4 text-sm text-green-600" role="alert">
+          {msg}
+        </p>
+      )}
+
+      <div className="mt-10 grid gap-8 sm:grid-cols-2">
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+          <h2 className="font-display text-display-sm text-brand-900">Events</h2>
+          <p className="mt-2 text-sm text-brand-600">
+            Schedule workshops, meetings, and community events.
+          </p>
+          <Link href="/member/events" className="mt-4 inline-flex font-medium text-primary-500 hover:text-primary-600">
+            Manage events →
+          </Link>
+        </div>
+
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+          <h2 className="font-display text-display-sm text-brand-900">Blog</h2>
+          <p className="mt-2 text-sm text-brand-600">
+            Write and edit blog posts.
+          </p>
+          <Link href="/member/blog" className="mt-4 inline-flex font-medium text-primary-500 hover:text-primary-600">
+            Manage blog →
+          </Link>
+        </div>
+
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+          <h2 className="font-display text-display-sm text-brand-900">Books</h2>
+          <p className="mt-2 text-sm text-brand-600">
+            Add books to the Bookshelf.
+          </p>
+          <Link href="/member/books" className="mt-4 inline-flex font-medium text-primary-500 hover:text-primary-600">
+            Manage books →
+          </Link>
+        </div>
+
+        <div className="rounded-xl border border-brand-200/60 bg-surface-muted p-6">
+          <h2 className="font-display text-display-sm text-brand-900">Videos</h2>
+          <p className="mt-2 text-sm text-brand-600">
+            Videos are managed in the{" "}
+            <a href="https://dashboard.mux.com" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-600 underline">
+              Mux dashboard
+            </a>
+            ; they appear in the Video Library once ready.
           </p>
         </div>
-      </Section>
-    </>
+
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+          <h2 className="font-display text-display-sm text-brand-900">Users</h2>
+          <p className="mt-2 text-sm text-brand-600">
+            Create users and assign roles (admin or staff). Admins only.
+          </p>
+          <Link href="/member/users" className="mt-4 inline-flex font-medium text-primary-500 hover:text-primary-600">
+            Manage users →
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
