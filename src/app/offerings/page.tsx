@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
-import { PageHero } from "@/components/layout/PageHero";
+import { PageBanner } from "@/components/layout/PageBanner";
 
 export const metadata = {
   title: "Our Offerings",
@@ -33,7 +33,8 @@ const offerings = [
 export default function OfferingsPage() {
   return (
     <>
-      <PageHero
+      <PageBanner
+        variant="offerings"
         title="Our Offerings"
         description="Programs and initiatives that empower women and preserve Igbo culture."
       />

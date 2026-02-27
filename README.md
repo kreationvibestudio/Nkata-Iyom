@@ -8,22 +8,23 @@ Repository for the full rebuild of **nkatandiinyom.com**, the website for Nkata 
 
 - **Total rebuild** of the former WordPress site.
 - **New stack:** Next.js, headless CMS, Mux (video), PostgreSQL, modern hosting.
-- **Planned features:** Blog, digital bookshelf, member-only video library, events, member dashboard, donations, accessibility-first and mobile-first UX.
+- **Features:** Blog, digital bookshelf, video library (both public), events, contact form, join form, member dashboard (Supabase auth), page banners, accessibility-first and mobile-first UX.
 
 A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nkata-ndi-Inyom-Rebuild-Plan.html)** (open in a browser or in Word and save as .docx to share).
 
 ---
 
-## Tech Stack (Planned)
+## Tech Stack
 
 | Layer           | Choice                          |
 |----------------|----------------------------------|
-| Frontend       | Next.js (React)                  |
-| Content       | Headless CMS (Strapi or Sanity)  |
-| Video         | Mux (streaming + free tier)      |
-| Auth & members| NextAuth.js or Clerk             |
-| Database      | PostgreSQL (e.g. Supabase)       |
-| Hosting       | Vercel (frontend)                |
+| Frontend       | Next.js 15 (App Router, React)   |
+| Content       | Supabase (events, blog, books)   |
+| Video         | Mux (streaming)                  |
+| Auth & members| Supabase Auth + profiles/roles   |
+| Database       | Supabase (PostgreSQL)            |
+| Email         | Resend (contact form)            |
+| Hosting       | Vercel                           |
 
 ---
 
@@ -44,17 +45,16 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 
 - [x] Project plan and client-facing high-level document (`Nkata-ndi-Inyom-Rebuild-Plan.html`)
 - [x] Repository created and connected to GitHub
-- [x] Initial `.gitignore` for Node/Next.js
 - [x] Next.js app (App Router, TypeScript, Tailwind) and design system
-- [x] Theme and logo adopted from original site (blue/navy palette, `public/logo.png`)
-- [x] Layout: responsive Header (with logo), Footer, nav, skip link
-- [x] Home page (hero, initiatives, story, testimonial, CTA)
-- [x] Core pages: About, Offerings, Blog (list + post), Bookshelf (list + detail), Video library (list + detail), Events, Contact, Member area, Privacy
-- [ ] CMS integration and real content
-- [ ] Auth and member-only access
-- [ ] Mux video playback and bookshelf reader
-- [ ] Contact form and events/RSVP
-- [ ] Vercel deployment and Supabase (or DB) when needed
+- [x] Theme and logo (blue/navy), responsive Header, Footer, nav, skip link
+- [x] Home page (hero, initiatives, pillars, CTA), About (with portrait banner), Offerings, Blog, Bookshelf, Video library, Events, Contact, Member area, Join, Privacy
+- [x] Supabase: auth, profiles/roles (admin/staff), events, blog_posts, books, join_applications
+- [x] Member area: dashboard, Events/Blog/Books CRUD, Users (admin only); login at `/member/login`
+- [x] Contact form (Resend); Join form (stored in Supabase)
+- [x] Mux video playback; Bookshelf and Video library **public** (no login required)
+- [x] Page banners (Offerings, Blog, Bookshelf, Video library, Events, Contact, Member area)
+- [x] Header: “Join Us Now” and Member area links; mobile menu scrollable with Sign out visible
+- [ ] Replace placeholder copy with final content; optional: join-applications admin view
 
 ---
 
@@ -77,6 +77,7 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 
 | Date       | Version / Tag | Changes |
 |------------|----------------|---------|
+| 2025-02-27 | Banners & UX  | Page banners for Offerings, Blog, Bookshelf, Video library, Events, Contact, Member area. About banner with portrait collage and gentle bounce. Join Us Now in header before Member area. Bookshelf and Video library made public (no login). Mobile menu scrollable; Member area and Sign out visible. README and tech stack updated. |
 | 2025-02-26 | Docs          | Added TODO.md with full task list (done vs to do). README updated: link to TODO.md, theme/logo in “What has been done”, Vercel/Supabase in remaining work, maintainer note to update TODO. |
 | 2025-02-26 | Theme & logo  | Adopted original site colors (blue #086afe, navy #031530) and logo; favicon from logo. |
 | 2025-02-26 | Framework     | Next.js 15 app: design system (Cormorant Garamond + Outfit, primary blue + navy), layout (Header, Footer, nav), Home + About, Offerings, Blog, Bookshelf, Video library, Events, Contact, Member, Privacy. Placeholder content; ready for CMS and assets. |

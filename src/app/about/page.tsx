@@ -1,6 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
-import { PageHero } from "@/components/layout/PageHero";
+import { AboutBanner } from "@/components/about/AboutBanner";
 
 export const metadata = {
   title: "About Us",
@@ -11,10 +11,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        title="About Nkata Ndi Inyom Igbo"
-        description="Our story, our founder, and our commitment to Igbo RoundTable conversations, shared leadership, and partnering for development."
-      />
+      <AboutBanner />
 
       <Section variant="muted">
         <div className="max-w-3xl space-y-6 text-brand-700 leading-relaxed">

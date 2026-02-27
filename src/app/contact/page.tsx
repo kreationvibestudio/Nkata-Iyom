@@ -1,5 +1,5 @@
 import { Section } from "@/components/ui/Section";
-import { PageHero } from "@/components/layout/PageHero";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata = {
@@ -11,7 +11,8 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero
+      <PageBanner
+        variant="contact"
         title="Contact Us"
         description="Join our mission, inquire about events, or learn how you can get involved. We'd love to hear from you."
       />

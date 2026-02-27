@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Section } from "@/components/ui/Section";
-import { PageHero } from "@/components/layout/PageHero";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { createClient } from "@/lib/supabase/server";
 import { getProfile, hasMemberAccess } from "@/lib/profiles";
 
@@ -28,7 +28,7 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
   if (!hasMemberAccess(profile)) {
     return (
       <>
-        <PageHero title="Member area" description="Sign in to manage the site." />
+        <PageBanner variant="member" title="Member area" description="Sign in to manage the site." />
         <Section variant="muted">
           <div className="max-w-md mx-auto text-center p-8 rounded-xl border border-brand-200/60 bg-surface">
             <p className="text-brand-700">
@@ -44,11 +44,14 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
   }
 
   return (
-    <div>
-      <h1 className="font-display text-display-md text-brand-900">Dashboard</h1>
-      <p className="mt-2 text-brand-700">
-        Add and edit content for the site. Use the links below or the menu above.
-      </p>
+    <>
+      <PageBanner
+        variant="member"
+        title="Member area"
+        description="Add and edit content for the site. Use the links below or the menu above."
+      />
+      <div className="section-padding container-narrow">
+      <h1 className="sr-only">Dashboard</h1>
       {msg && (
         <p className="mt-4 text-sm text-green-600" role="alert">
           {msg}
@@ -107,6 +110,7 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
           </Link>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

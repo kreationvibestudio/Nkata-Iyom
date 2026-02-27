@@ -1,6 +1,6 @@
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
-import { PageHero } from "@/components/layout/PageHero";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { getEvents } from "@/lib/events";
 
 export const metadata = {
@@ -16,7 +16,8 @@ export default async function EventsPage() {
 
   return (
     <>
-      <PageHero
+      <PageBanner
+        variant="events"
         title="Events"
         description="Workshops, meetings, and community events. Dates and details will be updated as they are confirmed."
       />

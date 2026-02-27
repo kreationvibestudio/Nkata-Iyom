@@ -64,6 +64,12 @@ export function Header({ signedIn = false }: HeaderProps) {
             );
           })}
           <Link
+            href="/join"
+            className="ml-2 px-4 py-2 text-sm font-semibold text-primary-500 border border-primary-500 rounded-md hover:bg-primary-50/70 hover:text-primary-600 transition-colors"
+          >
+            Join Us Now
+          </Link>
+          <Link
             href="/member"
             className="ml-2 px-4 py-2 text-sm font-semibold text-white bg-primary-500 rounded-md hover:bg-primary-600 transition-colors"
           >
@@ -99,10 +105,10 @@ export function Header({ signedIn = false }: HeaderProps) {
 
       <div
         id="mobile-menu"
-        className={`md:hidden border-t border-brand-200 bg-surface ${mobileOpen ? "block" : "hidden"}`}
+        className={`md:hidden border-t border-brand-200 bg-surface overflow-y-auto max-h-[calc(100vh-4rem)] ${mobileOpen ? "block" : "hidden"}`}
         aria-hidden={!mobileOpen}
       >
-        <nav className="container-narrow py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+        <nav className="container-narrow py-4 flex flex-col gap-1 pb-6" aria-label="Mobile navigation">
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}
@@ -115,6 +121,14 @@ export function Header({ signedIn = false }: HeaderProps) {
               {label}
             </Link>
           ))}
+          <div className="my-2 border-t border-brand-200" aria-hidden />
+          <Link
+            href="/join"
+            onClick={() => setMobileOpen(false)}
+            className="mx-4 px-4 py-3 text-center text-sm font-semibold text-primary-500 border border-primary-500 rounded-md"
+          >
+            Join Us Now
+          </Link>
           <Link
             href="/member"
             onClick={() => setMobileOpen(false)}
@@ -123,7 +137,7 @@ export function Header({ signedIn = false }: HeaderProps) {
             Member area
           </Link>
           {signedIn && (
-            <div className="px-4 py-3">
+            <div className="mt-2 mx-4 px-4 py-3 border border-brand-200 rounded-md bg-brand-50/50">
               <SignOutButton />
             </div>
           )}

@@ -62,6 +62,7 @@ const config: Config = {
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+        "float-bounce": "floatBounce 5s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -69,8 +70,14 @@ const config: Config = {
           "100%": { opacity: "1" },
         },
         fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        floatBounce: {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "25%": { transform: "translate(4px, -8px)" },
+          "50%": { transform: "translate(-5px, 4px)" },
+          "75%": { transform: "translate(-3px, 6px)" },
         },
       },
     },

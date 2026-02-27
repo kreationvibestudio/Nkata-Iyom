@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { PageHero } from "@/components/layout/PageHero";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { getBlogPosts } from "@/lib/blog";
 
 export const metadata = {
@@ -16,7 +16,8 @@ export default async function BlogPage() {
 
   return (
     <>
-      <PageHero
+      <PageBanner
+        variant="blog"
         title="Blog"
         description="Stories, cultural insights, leadership advice, and updates from our community."
       />

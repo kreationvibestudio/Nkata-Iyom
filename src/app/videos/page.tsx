@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { PageHero } from "@/components/layout/PageHero";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { getVideos } from "@/lib/mux";
 
 export const metadata = {
@@ -16,7 +16,8 @@ export default async function VideosPage() {
 
   return (
     <>
-      <PageHero
+      <PageBanner
+        variant="videos"
         title="Video Library"
         description="Cultural content, talks, and events. Powered by Mux for reliable streaming."
       />

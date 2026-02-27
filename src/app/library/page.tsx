@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
-import { PageHero } from "@/components/layout/PageHero";
+import { PageBanner } from "@/components/layout/PageBanner";
 import { getBooks } from "@/lib/books";
 
 export const metadata = {
@@ -17,9 +17,10 @@ export default async function LibraryPage() {
 
   return (
     <>
-      <PageHero
+      <PageBanner
+        variant="library"
         title="Bookshelf"
-        description="Our digital library of books and resources. Members can browse by category and read in-browser where available."
+        description="Our digital library of books and resources. Browse by category and read in-browser where available."
       />
 
       <Section variant="muted">

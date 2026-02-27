@@ -25,14 +25,5 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const pathname = request.nextUrl.pathname;
-  const isMemberOnly =
-    pathname.startsWith("/videos") || pathname.startsWith("/library");
-  if (isMemberOnly && !user) {
-    const redirect = new URL("/member", request.url);
-    redirect.searchParams.set("redirect", pathname);
-    return NextResponse.redirect(redirect);
-  }
-
   return response;
 }
