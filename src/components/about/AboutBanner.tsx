@@ -36,8 +36,8 @@ const POSITIONS: {
 export function AboutBanner() {
   return (
     <section
-      className="relative min-h-[500px] sm:min-h-[560px] overflow-hidden flex flex-col"
-      aria-label="About Nkata Ndi Inyom Igbo"
+      className="relative min-h-[420px] xs:min-h-[460px] sm:min-h-[500px] md:min-h-[560px] overflow-hidden flex flex-col"
+      aria-label="About Us"
     >
       {/* Gradient background: deep navy to primary blue */}
       <div
@@ -66,8 +66,8 @@ export function AboutBanner() {
       {/* Title bar at top – no overlap with portraits */}
       <div className="relative z-[3] shrink-0 border-b border-white/15 bg-brand-900/95 backdrop-blur-sm">
         <div className="container-narrow py-5 sm:py-6 px-5 sm:px-8">
-          <h1 className="font-display text-display-md sm:text-display-lg text-white heading-balance font-semibold">
-            About Nkata Ndi Inyom Igbo
+          <h1 className="font-display text-xl sm:text-display-md md:text-display-lg text-white heading-balance font-semibold break-words">
+            About Us
           </h1>
           <p className="mt-2 sm:mt-3 text-sm sm:text-base text-primary-100 leading-snug max-w-2xl">
             Our story, our founder, and our commitment to Igbo RoundTable

@@ -29,7 +29,7 @@ export default async function LibraryPage() {
             No books in the library yet. Check back soon or contact us to suggest titles.
           </p>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-0">
             {books.map((book) => (
               <article
                 key={book.id}
@@ -48,7 +48,7 @@ export default async function LibraryPage() {
                     <span>[Cover]</span>
                   )}
                 </div>
-                <div className="p-6">
+                <div className="p-4 sm:p-6 min-w-0">
                   <span className="text-xs font-medium text-primary-500 uppercase tracking-wider">
                     {book.category}
                   </span>

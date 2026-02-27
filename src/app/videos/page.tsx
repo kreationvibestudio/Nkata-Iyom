@@ -36,7 +36,7 @@ export default async function VideosPage() {
             </p>
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-0">
             {videos.map((video) => (
               <Link
                 key={video.playbackId}
@@ -58,7 +58,7 @@ export default async function VideosPage() {
                     {video.duration}
                   </span>
                 </div>
-                <div className="p-6">
+                <div className="p-4 sm:p-6 min-w-0">
                   <h2 className="font-display text-display-sm text-brand-900 group-hover:text-primary-600 transition-colors">
                     Video
                   </h2>

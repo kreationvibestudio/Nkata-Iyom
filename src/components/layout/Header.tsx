@@ -8,13 +8,13 @@ import { SignOutButton } from "@/components/member/SignOutButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/offerings", label: "Offerings" },
+  { href: "/about", label: "About Us" },
+  { href: "/offerings", label: "What We Do" },
   { href: "/blog", label: "Blog" },
   { href: "/library", label: "Bookshelf" },
   { href: "/videos", label: "Video Library" },
   { href: "/events", label: "Events" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ] as const;
 
 interface HeaderProps {

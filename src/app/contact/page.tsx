@@ -3,7 +3,7 @@ import { PageBanner } from "@/components/layout/PageBanner";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata = {
-  title: "Contact",
+  title: "Contact Us",
   description:
     "Get in touch with Nkata ndi Inyom Igbo. Join us, inquire about events, or learn how you can get involved.",
 };
@@ -17,7 +17,7 @@ export default function ContactPage() {
         description="Join our mission, inquire about events, or learn how you can get involved. We'd love to hear from you."
       />
       <Section variant="muted">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-4xl mx-auto min-w-0">
           <div>
             <h2 className="font-display text-display-sm text-brand-900">We&apos;d Love to Hear from You</h2>
             <p className="mt-3 text-brand-700 leading-relaxed">

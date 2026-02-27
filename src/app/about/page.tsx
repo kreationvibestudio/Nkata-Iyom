@@ -14,7 +14,7 @@ export default function AboutPage() {
       <AboutBanner />
 
       <Section variant="muted">
-        <div className="max-w-3xl space-y-6 text-brand-700 leading-relaxed">
+        <div className="max-w-3xl min-w-0 space-y-6 text-brand-700 leading-relaxed">
           <p className="text-lg">
             Nkata Ndi Inyom Igbo (NNII) is an organization founded by a lawyer, socio-cultural historian, women leader, gender/civil rights activist and former Minister of Women Affairs, <strong className="text-brand-900">Iyom Josephine Anenih</strong>. Founded on the <strong className="text-brand-900">26th of August, 2020</strong> as a platform for women to return to the much-valued Igbo RoundTable Conversations, rooted in the idea that conversations from the family unit, kindred up to the larger community signpost the integrative means of getting everyone to contribute ideas, energy and resources to the development of society. Membership is open to all women of Igbo ancestry and/or marriage willing to join forces for the development of the region and indeed, the Nigerian nation as daughters, sisters, wives and mothers.
           </p>
@@ -37,29 +37,29 @@ export default function AboutPage() {
       </Section>
 
       <Section variant="primary-subtle" id="pillars">
-        <h2 className="font-display text-display-md text-brand-900 heading-balance mb-8">
+        <h2 className="font-display text-xl sm:text-display-md text-brand-900 heading-balance mb-6 sm:mb-8">
           Our Key Pillars
         </h2>
-        <div className="grid sm:grid-cols-2 gap-8">
-          <article className="p-6 rounded-xl bg-surface border border-brand-200/60">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 min-w-0">
+          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
             <h3 className="font-display text-display-sm text-brand-900">Dialogue & Conversations</h3>
             <p className="mt-3 text-brand-700 leading-relaxed">
               At NNII, we understand the power of dialogue and conversations. We believe that open and inclusive discussions are essential for understanding diverse perspectives, fostering unity, and finding innovative solutions to complex challenges. Through meaningful dialogue, we create spaces where everyone's voice is heard, valued, and respected. It's about coming together, sharing ideas, and building consensus for positive change.
             </p>
           </article>
-          <article className="p-6 rounded-xl bg-surface border border-brand-200/60">
+          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
             <h3 className="font-display text-display-sm text-brand-900">Equity</h3>
             <p className="mt-3 text-brand-700 leading-relaxed">
               Here at NNII, we are all about fairness and balance. We believe in shared gender partnership and governance where men and women contribute their quota towards sustainable development.
             </p>
           </article>
-          <article className="p-6 rounded-xl bg-surface border border-brand-200/60">
+          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
             <h3 className="font-display text-display-sm text-brand-900">Empowerment</h3>
             <p className="mt-3 text-brand-700 leading-relaxed">
               Empowering women is at the heart of what we do at NNII. Through education, mentorship, and advocacy, we provide women with the tools and resources they need to realize their full potential and make meaningful contributions to society. By investing in women's empowerment, we not only transform individual lives but also drive positive change for entire communities.
             </p>
           </article>
-          <article className="p-6 rounded-xl bg-surface border border-brand-200/60">
+          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
             <h3 className="font-display text-display-sm text-brand-900">Partnership</h3>
             <p className="mt-3 text-brand-700 leading-relaxed">
               We are firm believers in the power of collaboration as encapsulated in our motto, “Partnering for development.” By working together across genders and sectors, we maximize our collective impact and address the challenges facing our communities. Through shared responsibility and mutual support, we build a stronger and more resilient society for all.
@@ -134,7 +134,7 @@ export default function AboutPage() {
           <p className="text-brand-700 mb-6">Ready to join or learn more?</p>
           <div className="flex flex-wrap justify-center gap-4">
             <ButtonLink href="/contact">Contact Us</ButtonLink>
-            <ButtonLink href="/offerings" variant="outline">Our Offerings</ButtonLink>
+            <ButtonLink href="/offerings" variant="outline">What We Do</ButtonLink>
           </div>
         </div>
       </Section>

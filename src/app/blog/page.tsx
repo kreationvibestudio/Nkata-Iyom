@@ -26,7 +26,7 @@ export default async function BlogPage() {
         {posts.length === 0 ? (
           <p className="text-brand-600 max-w-2xl">No posts yet. Check back soon.</p>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-0">
             {posts.map((post) => (
               <Link
                 key={post.id}
@@ -36,7 +36,7 @@ export default async function BlogPage() {
                 <div className="aspect-video bg-brand-100/50 flex items-center justify-center text-brand-600 text-sm">
                   [Image]
                 </div>
-                <div className="p-6">
+                <div className="p-4 sm:p-6 min-w-0">
                   <time className="text-sm text-brand-600" dateTime={post.created_at}>
                     {new Date(post.created_at).toLocaleDateString("en-GB", {
                       day: "numeric",

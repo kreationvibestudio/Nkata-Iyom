@@ -4,7 +4,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { PageBanner } from "@/components/layout/PageBanner";
 
 export const metadata = {
-  title: "Our Offerings",
+  title: "What We Do",
   description:
     "Explore Nkata ndi Inyom Igbo’s programs: community leadership, cultural heritage, workshops, and mentorship.",
 };
@@ -35,7 +35,7 @@ export default function OfferingsPage() {
     <>
       <PageBanner
         variant="offerings"
-        title="Our Offerings"
+        title="What We Do"
         description="Programs and initiatives that empower women and preserve Igbo culture."
       />
 

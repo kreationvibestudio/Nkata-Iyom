@@ -19,6 +19,12 @@ const sans = Outfit({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Nkata ndi Inyom Igbo | Empowering Igbo Women Together",
@@ -45,7 +51,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen min-h-[100dvh] flex flex-col overflow-x-hidden">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-500 focus:text-white focus:rounded-md"
@@ -53,7 +59,7 @@ export default async function RootLayout({
           Skip to main content
         </a>
         <Header signedIn={!!user} />
-        <main id="main-content" className="flex-1">
+        <main id="main-content" className="flex-1 overflow-x-hidden min-w-0">
           {children}
         </main>
         <Footer />

@@ -12,10 +12,12 @@
 
   html {
     @apply scroll-smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-surface text-brand-900 font-sans antialiased;
+    overflow-x: hidden;
   }
 
   /* Focus visible for accessibility */
@@ -26,7 +28,7 @@
 
 @layer components {
   .container-narrow {
-    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8 lg:px-10;
+    @apply mx-auto w-full min-w-0 max-w-[1200px] px-4 sm:px-6 md:px-8 lg:px-10;
   }
 
   .section-padding {

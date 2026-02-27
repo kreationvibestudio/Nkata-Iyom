@@ -56,8 +56,15 @@ const config: Config = {
         "display-sm": ["1.5rem", { lineHeight: "1.3" }],
       },
       spacing: {
-        section: "clamp(4rem, 10vw, 7rem)",
+        section: "clamp(3rem, 8vw, 7rem)",
         container: "min(90vw, 1200px)",
+      },
+      screens: {
+        xs: "375px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",

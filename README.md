@@ -54,7 +54,10 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 - [x] Mux video playback; Bookshelf and Video library **public** (no login required)
 - [x] Page banners (Offerings, Blog, Bookshelf, Video library, Events, Contact, Member area)
 - [x] Header: “Join Us Now” and Member area links; mobile menu scrollable with Sign out visible
-- [ ] Replace placeholder copy with final content; optional: join-applications admin view
+- [x] Home: Key Pillars (D.E.E.P) with pillar images; Story section with image and copy; testimonial (Nkechi Okoli)
+- [x] Nav labels: About Us, What We Do, Contact Us
+- [x] Site-wide responsive: viewport, overflow-x-hidden, responsive grids/typography, touch-friendly forms, safe-area, xs breakpoint
+- [ ] Optional: join-applications admin view
 
 ---
 
@@ -77,6 +80,7 @@ A detailed, client-facing plan is in **[Nkata-ndi-Inyom-Rebuild-Plan.html](./Nka
 
 | Date       | Version / Tag | Changes |
 |------------|----------------|---------|
+| 2025-02-27 | Content & responsive | Key Pillars (D.E.E.P) with pillar images on home. Story section: real image (our-story.png), updated copy. Testimonial author: Nkechi Okoli. Nav: About Us, What We Do, Contact Us. Full responsive pass: viewport, overflow-x-hidden, responsive grids/typography/spacing, touch-friendly form inputs, safe-area footer, xs breakpoint. README updated. |
 | 2025-02-27 | Banners & UX  | Page banners for Offerings, Blog, Bookshelf, Video library, Events, Contact, Member area. About banner with portrait collage and gentle bounce. Join Us Now in header before Member area. Bookshelf and Video library made public (no login). Mobile menu scrollable; Member area and Sign out visible. README and tech stack updated. |
 | 2025-02-26 | Docs          | Added TODO.md with full task list (done vs to do). README updated: link to TODO.md, theme/logo in “What has been done”, Vercel/Supabase in remaining work, maintainer note to update TODO. |
 | 2025-02-26 | Theme & logo  | Adopted original site colors (blue #086afe, navy #031530) and logo; favicon from logo. |

@@ -1,20 +1,20 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { href: "/about", label: "About" },
-  { href: "/offerings", label: "Offerings" },
+  { href: "/about", label: "About Us" },
+  { href: "/offerings", label: "What We Do" },
   { href: "/blog", label: "Blog" },
   { href: "/library", label: "Bookshelf" },
   { href: "/videos", label: "Video Library" },
   { href: "/events", label: "Events" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ] as const;
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-brand-200 bg-primary-50/50">
+    <footer className="border-t border-brand-200 bg-primary-50/50 pb-[env(safe-area-inset-bottom)]">
       <div className="container-narrow section-padding">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>

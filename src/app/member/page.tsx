@@ -58,8 +58,8 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
         </p>
       )}
 
-      <div className="mt-10 grid gap-8 sm:grid-cols-2">
-        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+      <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 min-w-0">
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-4 sm:p-6 min-w-0">
           <h2 className="font-display text-display-sm text-brand-900">Events</h2>
           <p className="mt-2 text-sm text-brand-600">
             Schedule workshops, meetings, and community events.
@@ -69,7 +69,7 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
           </Link>
         </div>
 
-        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-4 sm:p-6 min-w-0">
           <h2 className="font-display text-display-sm text-brand-900">Blog</h2>
           <p className="mt-2 text-sm text-brand-600">
             Write and edit blog posts.
@@ -79,7 +79,7 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
           </Link>
         </div>
 
-        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-4 sm:p-6 min-w-0">
           <h2 className="font-display text-display-sm text-brand-900">Books</h2>
           <p className="mt-2 text-sm text-brand-600">
             Add books to the Bookshelf.
@@ -89,7 +89,7 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
           </Link>
         </div>
 
-        <div className="rounded-xl border border-brand-200/60 bg-surface-muted p-6">
+        <div className="rounded-xl border border-brand-200/60 bg-surface-muted p-4 sm:p-6 min-w-0">
           <h2 className="font-display text-display-sm text-brand-900">Videos</h2>
           <p className="mt-2 text-sm text-brand-600">
             Videos are managed in the{" "}
@@ -100,7 +100,7 @@ export default async function MemberPage({ searchParams }: MemberPageProps) {
           </p>
         </div>
 
-        <div className="rounded-xl border border-brand-200/60 bg-surface p-6">
+        <div className="rounded-xl border border-brand-200/60 bg-surface p-4 sm:p-6 min-w-0">
           <h2 className="font-display text-display-sm text-brand-900">Users</h2>
           <p className="mt-2 text-sm text-brand-600">
             Create users and assign roles (admin or staff). Admins only.

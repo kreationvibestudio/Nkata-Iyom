@@ -13,7 +13,7 @@ export function ContactForm() {
   const [status, setStatus] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const inputClass =
-    "w-full rounded-md border border-brand-300 px-3 py-2 text-brand-900 placeholder:text-brand-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500";
+    "w-full min-h-[44px] rounded-md border border-brand-300 px-3 py-2.5 sm:py-2 text-brand-900 placeholder:text-brand-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 min-w-0";
   const labelClass = "block text-sm font-medium text-brand-700 mb-1";
 
   async function handleSubmit(e: React.FormEvent) {

@@ -65,7 +65,7 @@ export function PageBanner({
 
   return (
     <section
-      className="relative min-h-[220px] sm:min-h-[260px] overflow-hidden flex flex-col justify-center"
+      className="relative min-h-[180px] xs:min-h-[200px] sm:min-h-[220px] md:min-h-[260px] overflow-hidden flex flex-col justify-center"
       aria-label={title}
     >
       {/* Gradient background */}
@@ -89,9 +89,9 @@ export function PageBanner({
       />
 
       {/* Title and description */}
-      <div className="container-narrow relative z-[2] py-12 sm:py-14 px-5 sm:px-8">
-        <div className="max-w-2xl">
-          <h1 className="font-display text-display-md sm:text-display-lg text-white heading-balance font-semibold">
+      <div className="container-narrow relative z-[2] py-8 sm:py-12 md:py-14">
+        <div className="max-w-2xl min-w-0">
+          <h1 className="font-display text-xl sm:text-display-md md:text-display-lg text-white heading-balance font-semibold break-words">
             {title}
           </h1>
           {description && (
