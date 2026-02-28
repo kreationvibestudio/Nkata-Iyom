@@ -3,7 +3,8 @@ import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { LoadingScreen } from "@/components/loading/LoadingScreen";
+import { LoadingOverlay } from "@/components/loading/LoadingOverlay";
+import { LoadingScreenClient } from "@/components/loading/LoadingScreenClient";
 import { createClient } from "@/lib/supabase/server";
 import { getProfile, hasMemberAccess } from "@/lib/profiles";
 
@@ -56,7 +57,8 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="min-h-screen min-h-[100dvh] flex flex-col overflow-x-hidden">
-        <LoadingScreen />
+        <LoadingOverlay />
+        <LoadingScreenClient />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-500 focus:text-white focus:rounded-md"
