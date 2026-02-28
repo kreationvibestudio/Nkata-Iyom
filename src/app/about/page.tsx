@@ -1,22 +1,6 @@
-import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { AboutBanner } from "@/components/about/AboutBanner";
-
-const boardOfTrustees = [
-  { name: "Dr. Regina Amadi Njoku", title: "Chairman", image: "/about/H.-E.-Regina-Amadi-Njoku-150x150-d4ff800c-f96b-4164-b75b-45c5cbf7e108.png" },
-  { name: "Iyom Josephine Anenih, Esq. FNIM, mni, SCN", title: "Founder / President General", image: "/about/josephine-anenih-150x150-6c3925d4-8187-4fc2-812c-218cc1512999.png" },
-  { name: "Dr. Anne Okigbo", title: "Board Secretary / Vice President", image: "/about/Dr.-Ann-Okigbo-150x150-f7ebbc46-8f70-424a-be14-cfc0cfeb8617.png" },
-  { name: "Dr. Grace Okudo, AIG", title: "Member", image: "/about/Dr.-Grace-Okudo-150x150-5b702980-92a9-488b-a7c3-fced0662f3c4.png" },
-];
-
-const boardOfAdvisors = [
-  { name: "Prof. Barth Nnaji", title: "Chairman" },
-  { name: "Patrick Okigbo III" },
-  { name: "Agubuzu" },
-  { name: "Gen. Abel Obi Umahi, Rtd." },
-  { name: "Dike Chukwumerije" },
-];
 
 export const metadata = {
   title: "About Us",
@@ -112,64 +96,6 @@ export default function AboutPage() {
               We champion fairness and balance in leadership and opportunity. We believe in shared gender partnership where men and women contribute their quota towards sustainable development.
             </p>
           </article>
-        </div>
-      </Section>
-
-      <Section variant="muted" id="board-of-trustees">
-        <h2 className="font-display text-display-md text-brand-900 heading-balance mb-8">
-          Board of Trustees
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {boardOfTrustees.map((member) => (
-            <article
-              key={member.name}
-              className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
-            >
-              <div className="relative aspect-[3/4] bg-brand-100">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
-              </div>
-              <div className="p-4 flex flex-col flex-1">
-                <p className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
-                  {member.title}
-                </p>
-                <h3 className="font-display text-lg text-brand-900 mt-1">{member.name}</h3>
-              </div>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      <Section variant="primary-subtle" id="board-of-advisors">
-        <h2 className="font-display text-display-md text-brand-900 heading-balance mb-6">
-          Board of Advisors
-        </h2>
-        <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm mb-8 max-w-4xl mx-auto">
-          <Image
-            src="/about/board-of-advisors.png"
-            alt="Board of Advisors — Prof. Barth Nnaji (Chairman), Patrick Okigbo III, Agubuzu, Gen. Abel Obi Umahi, Dike Chukwumerije"
-            width={900}
-            height={600}
-            className="w-full h-auto object-contain"
-            sizes="(max-width: 768px) 100vw, 900px"
-          />
-        </div>
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-brand-800">
-          {boardOfAdvisors.map((member) => (
-            <div key={member.name} className="flex items-baseline gap-2">
-              {member.title && (
-                <span className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
-                  {member.title}
-                </span>
-              )}
-              <span className="font-display text-lg text-brand-900">{member.name}</span>
-            </div>
-          ))}
         </div>
       </Section>
 

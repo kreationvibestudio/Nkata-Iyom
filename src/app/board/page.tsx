@@ -8,21 +8,19 @@ export const metadata = {
     "Our leadership philosophy and members of the Board of Trustees and Board of Advisors of Nkata Ndi Inyom Igbo.",
 };
 
-const boardImages = [
-  { src: "/board/dr-anne-okigbo.png", name: "Dr. Anne Okigbo", role: "Board of Trustees", bio: "Dr. Anne Okigbo brings extensive experience in leadership and development to the Board of Trustees." },
-  { src: "/board/IMG-20231016-WA0014.jpg", name: "Board Member", role: "Board of Trustees", bio: "Committed to the mission of Nkata Ndi Inyom Igbo and partnering for development." },
-  { src: "/board/IMG_20231019_112001_729.jpg", name: "Board Member", role: "Board of Trustees", bio: "Committed to the mission of Nkata Ndi Inyom Igbo and partnering for development." },
-  { src: "/board/IMG_20231019_112018_820.jpg", name: "Board Member", role: "Board of Trustees", bio: "Committed to the mission of Nkata Ndi Inyom Igbo and partnering for development." },
-  { src: "/board/IMG_20231019_112034_668.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112048_954.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112103_979.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112114_822.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112126_214.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112134_976.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112143_350.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112156_833.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112209_688.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
-  { src: "/board/IMG_20231019_112220_355.jpg", name: "Board Member", role: "Board of Advisors", bio: "Providing strategic guidance and complementary experience to advance NNII's goals." },
+const boardOfTrustees = [
+  { src: "/board/IMG-20231016-WA0014.jpg", name: "Dr. Regina Amadi Njoku", title: "Chairman" },
+  { src: "/board/IMG_20231019_112001_729.jpg", name: "Iyom Josephine Anenih, Esq. FNIM, mni, SCN", title: "Founder / President General" },
+  { src: "/board/dr-anne-okigbo.png", name: "Dr. Anne Okigbo", title: "Board Secretary / Vice President" },
+  { src: "/board/IMG_20231019_112018_820.jpg", name: "Dr. Grace Okudo, AIG", title: "Member" },
+];
+
+const boardOfAdvisors = [
+  { src: "/board/IMG_20231019_112034_668.jpg", name: "Prof. Barth Nnaji", title: "Chairman" },
+  { src: "/board/IMG_20231019_112048_954.jpg", name: "Patrick Okigbo III" },
+  { src: "/board/IMG_20231019_112103_979.jpg", name: "Agubuzu" },
+  { src: "/board/IMG_20231019_112114_822.jpg", name: "Gen. Abel Obi Umahi, Rtd." },
+  { src: "/board/IMG_20231019_112126_214.jpg", name: "Dike Chukwumerije" },
 ];
 
 export default function BoardPage() {
@@ -55,10 +53,10 @@ export default function BoardPage() {
         </div>
       </Section>
 
-      <Section variant="primary-subtle">
+      <Section variant="primary-subtle" id="board-of-trustees">
         <h2 className="font-display text-display-sm text-brand-900 mb-8">Board of Trustees</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {boardImages.map((member) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {boardOfTrustees.map((member) => (
             <article
               key={member.src}
               className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
@@ -74,10 +72,39 @@ export default function BoardPage() {
               </div>
               <div className="p-4 flex flex-col flex-1">
                 <p className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
-                  {member.role}
+                  {member.title}
                 </p>
                 <h3 className="font-display text-lg text-brand-900 mt-1">{member.name}</h3>
-                <p className="mt-2 text-sm text-brand-700 leading-relaxed flex-1">{member.bio}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section variant="muted" id="board-of-advisors">
+        <h2 className="font-display text-display-sm text-brand-900 mb-8">Board of Advisors</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          {boardOfAdvisors.map((member) => (
+            <article
+              key={member.src}
+              className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
+            >
+              <div className="relative aspect-[3/4] bg-brand-100">
+                <Image
+                  src={member.src}
+                  alt={member.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                />
+              </div>
+              <div className="p-4 flex flex-col flex-1">
+                {member.title && (
+                  <p className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
+                    {member.title}
+                  </p>
+                )}
+                <h3 className="font-display text-lg text-brand-900 mt-1">{member.name}</h3>
               </div>
             </article>
           ))}
