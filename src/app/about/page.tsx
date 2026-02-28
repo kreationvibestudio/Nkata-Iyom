@@ -11,11 +11,11 @@ const boardOfTrustees = [
 ];
 
 const boardOfAdvisors = [
-  { name: "Dr. Sally Adukwu-Bolujoko, FNIM, OON", image: "/about/dr-sally-adukwu-bolujoko.png" },
-  { name: "Prof. Joy Ngozi Ezeilo (SAN), OON", image: "/about/prof-joy-ezeilo-150x150-42c428f2-11b9-44dc-94b7-197dbe0c1683.png" },
-  { name: "Prof. Uche Azikiwe, MFR", image: "/about/H.-E.-Prof-Uche-Azikiwe-150x150-cde06f24-cd32-4570-8487-dfa035689977.png" },
-  { name: "Hon. Justice Rose N. Ukeje, OFR", image: "/about/justice-ukeje-150x150-6e4235b9-e92a-44b7-81df-c1f5b60c9838.png" },
-  { name: "Amb. Nkem Wadibia Anyanwu", image: "/about/amb-nkem-anyawu-150x150-f0153a6e-b605-4884-bf76-76b49be3cde9.png" },
+  { name: "Prof. Barth Nnaji", title: "Chairman" },
+  { name: "Patrick Okigbo III" },
+  { name: "Agubuzu" },
+  { name: "Gen. Abel Obi Umahi, Rtd." },
+  { name: "Dike Chukwumerije" },
 ];
 
 export const metadata = {
@@ -146,28 +146,29 @@ export default function AboutPage() {
       </Section>
 
       <Section variant="primary-subtle" id="board-of-advisors">
-        <h2 className="font-display text-display-md text-brand-900 heading-balance mb-8">
+        <h2 className="font-display text-display-md text-brand-900 heading-balance mb-6">
           Board of Advisors
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8">
+        <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm mb-8 max-w-4xl mx-auto">
+          <Image
+            src="/about/board-of-advisors.png"
+            alt="Board of Advisors — Prof. Barth Nnaji (Chairman), Patrick Okigbo III, Agubuzu, Gen. Abel Obi Umahi, Dike Chukwumerije"
+            width={900}
+            height={600}
+            className="w-full h-auto object-contain"
+            sizes="(max-width: 768px) 100vw, 900px"
+          />
+        </div>
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-brand-800">
           {boardOfAdvisors.map((member) => (
-            <article
-              key={member.name}
-              className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
-            >
-              <div className="relative aspect-[3/4] bg-brand-100">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                />
-              </div>
-              <div className="p-4 flex flex-col flex-1">
-                <h3 className="font-display text-lg text-brand-900">{member.name}</h3>
-              </div>
-            </article>
+            <div key={member.name} className="flex items-baseline gap-2">
+              {member.title && (
+                <span className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
+                  {member.title}
+                </span>
+              )}
+              <span className="font-display text-lg text-brand-900">{member.name}</span>
+            </div>
           ))}
         </div>
       </Section>
