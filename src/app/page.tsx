@@ -58,9 +58,6 @@ export default async function HomePage() {
           <h2 className="font-display text-xl sm:text-display-md lg:text-display-lg text-brand-900 heading-balance">
             Key Pillars
           </h2>
-          <p className="mt-2 text-xl sm:text-2xl font-semibold text-primary-600 tracking-wide" aria-label="D E E P">
-            D.E.E.P
-          </p>
           <p className="mt-4 text-brand-700 text-lg">
             The values that guide everything we do at NNII.
           </p>
