@@ -9,8 +9,8 @@ export const metadata = {
 };
 
 const boardOfTrustees = [
-  { src: "/board/IMG-20231016-WA0014.jpg", name: "Dr. Regina Amadi Njoku", title: "Chairman" },
-  { src: "/board/IMG_20231019_112001_729.jpg", name: "Iyom Josephine Anenih, Esq. FNIM, mni, SCN", title: "Founder / President General" },
+  { src: "/board/IMG_20231019_112001_729.jpg", name: "Dr. Regina Amadi Njoku", title: "Chairman" },
+  { src: "/board/IMG-20231016-WA0014.jpg", name: "Iyom Josephine Anenih, Esq. FNIM, mni, SCN", title: "Founder / President General" },
   { src: "/board/dr-anne-okigbo.png", name: "Dr. Anne Okigbo", title: "Board Secretary / Vice President" },
   { src: "/board/IMG_20231019_112018_820.jpg", name: "Dr. Grace Okudo, AIG", title: "Member" },
 ];
