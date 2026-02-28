@@ -65,13 +65,14 @@ export default function BoardPage() {
               key={member.src}
               className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
             >
-              <div className="relative aspect-[3/4] bg-brand-100">
+              <div className="relative aspect-[3/4] bg-brand-100 flex items-center justify-center">
                 <Image
                   src={member.src}
                   alt={member.name}
                   fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-contain"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
+                  quality={90}
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
@@ -95,13 +96,14 @@ export default function BoardPage() {
               key={member.src}
               className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
             >
-              <div className="relative aspect-[3/4] bg-brand-100">
+              <div className="relative aspect-[3/4] bg-brand-100 flex items-center justify-center">
                 <Image
                   src={member.src}
                   alt={member.name}
                   fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                  className="object-contain"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 240px"
+                  quality={90}
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
