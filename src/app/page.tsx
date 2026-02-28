@@ -114,46 +114,6 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* Features / Initiatives */}
-      <Section variant="muted" id="initiatives">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-14">
-          <h2 className="font-display text-xl sm:text-display-md lg:text-display-lg text-brand-900 heading-balance">
-            Empowering Women and Community
-          </h2>
-          <p className="mt-4 text-brand-700 text-lg">
-            Explore the various initiatives aimed at preserving Igbo culture and empowering women in our communities.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-          {[
-            {
-              title: "Cultural Preservation",
-              description:
-                "We actively safeguard Igbo traditions and stories, ensuring they are passed on to future generations through workshops and community events.",
-            },
-            {
-              title: "Leadership Guidance",
-              description:
-                "Providing local leaders with advice and mentorship, we help shape resilient, empowered women ready to face community challenges with integrity.",
-            },
-            {
-              title: "Conflict Resolution",
-              description:
-                "Our council offers mediation services, using our wisdom and experience to resolve disputes harmoniously and strengthen community bonds.",
-            },
-          ].map((item, i) => (
-            <article
-              key={item.title}
-              className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 shadow-sm hover:shadow-md hover:border-brand-300/60 transition-all duration-300 min-w-0"
-              style={{ animationDelay: `${i * 80}ms` }}
-            >
-              <h3 className="font-display text-display-sm text-brand-900">{item.title}</h3>
-              <p className="mt-3 text-brand-700 leading-relaxed">{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
       {/* Story */}
       <Section variant="primary-subtle">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center min-w-0">
