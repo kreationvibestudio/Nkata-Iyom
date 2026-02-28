@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { AboutBanner } from "@/components/about/AboutBanner";
@@ -47,6 +48,48 @@ export default function AboutPage() {
           <p className="mt-4 text-brand-700 text-lg">
             Accountability, Respect, Integrity, Sisterhood, Equity — the values that guide everything we do at NNII.
           </p>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 max-w-4xl mx-auto">
+          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
+            <Image
+              src="/about/core-values-1.png"
+              alt="NNII conference — women engaged at round tables, dialogue and community"
+              width={600}
+              height={450}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+          </div>
+          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
+            <Image
+              src="/about/core-values-2.png"
+              alt="NNII conference — community and partnership, Partnering for Development"
+              width={600}
+              height={450}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+          </div>
+          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
+            <Image
+              src="/about/core-values-3.png"
+              alt="NNII members — sisterhood, celebration and shared purpose"
+              width={600}
+              height={450}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+          </div>
+          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
+            <Image
+              src="/about/core-values-4.png"
+              alt="NNII event — women participating, registration and engagement"
+              width={600}
+              height={450}
+              className="w-full h-full object-cover"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-0">
           <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
