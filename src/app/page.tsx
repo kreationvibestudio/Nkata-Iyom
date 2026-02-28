@@ -58,9 +58,6 @@ export default async function HomePage() {
           <h2 className="font-display text-xl sm:text-display-md lg:text-display-lg text-brand-900 heading-balance">
             Key Pillars
           </h2>
-          <p className="mt-4 text-brand-700 text-lg">
-            The values that guide everything we do at NNII.
-          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {[
@@ -142,12 +139,13 @@ export default async function HomePage() {
               Learn More
             </ButtonLink>
           </div>
-          <div className="relative rounded-2xl aspect-[4/3] overflow-hidden bg-brand-100/50">
+          <div className="relative rounded-2xl aspect-[4/3] overflow-hidden bg-white flex items-center justify-center p-8">
             <Image
-              src="/our-story.png"
-              alt="Our story — Nkata Ndi Inyom Igbo"
-              fill
-              className="object-cover object-center"
+              src="/nkata-logo.png"
+              alt="Nkata Ndi Inyom Igbo (NNII) — Partnering for Development"
+              width={400}
+              height={400}
+              className="object-contain w-full h-full"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
@@ -157,9 +155,6 @@ export default async function HomePage() {
       {/* Membership Drive Video */}
       <Section variant="muted" id="membership-video">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-xl sm:text-display-md text-brand-900 heading-balance mb-6 text-center">
-            Membership Drive
-          </h2>
           <MembershipDriveVideo playbackId={playbackId} />
         </div>
       </Section>
