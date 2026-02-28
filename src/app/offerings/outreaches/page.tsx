@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { PageBanner } from "@/components/layout/PageBanner";
 import { ButtonLink } from "@/components/ui/Button";
@@ -30,6 +31,16 @@ export default function OutreachesPage() {
             <p>
               For us, outreach is where vision meets people. We go beyond conversations and conferences to engage communities directly — listening, supporting, educating, and responding to real needs on the ground. From capacity-building initiatives and skills development programmes to health awareness, value reorientation, and community empowerment engagements, our outreach efforts are practical, inclusive, and impact-driven. We prioritise underserved groups, strengthen local structures, and foster partnerships that ensure sustainability beyond each intervention.
             </p>
+          </div>
+          <div className="mt-8 rounded-xl overflow-hidden border border-brand-200/60 shadow-sm">
+            <Image
+              src="/offerings/outreaches.png"
+              alt="Nkata Ndi Inyom Igbo outreach — community engagement with young girls and women, Partnering for Development"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
           </div>
           <ButtonLink href="/offerings" variant="outline" className="mt-8">
             View all programmes
