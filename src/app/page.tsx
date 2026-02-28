@@ -68,29 +68,29 @@ export default async function HomePage() {
               title: "Dialogue/Conversations",
               description:
                 "At NNII, we understand the power of dialogue and conversations. We believe that open and inclusive discussions are essential for understanding diverse perspectives, fostering unity, and finding innovative solutions to complex challenges. Through meaningful dialogue, we create spaces where everyone's voice is heard, valued, and respected. It's about coming together, sharing ideas, and building consensus for positive change.",
-              image: "/pillars/Dr.-Grace-Okudo-150x150-40b91b65-372c-49c5-b5d1-5275342144cb.png",
-              imageAlt: "Dr. Grace Okudo",
+              image: "/about/core-values-1.png",
+              imageAlt: "NNII conference — women engaged at round tables, dialogue and community",
             },
             {
               title: "Equity",
               description:
                 "Here at NNII, we are all about fairness and balance. We believe in shared gender partnership/governance where men and women contribute their quota towards sustainable development.",
-              image: "/pillars/josephine-anenih-150x150-5c067b98-8c10-491f-96b5-2e7419ff523b.png",
-              imageAlt: "Iyom Josephine Anenih",
+              image: "/about/core-values-2.png",
+              imageAlt: "NNII conference — community and partnership, Partnering for Development",
             },
             {
               title: "Empowerment",
               description:
                 "Empowering women is at the heart of what we do at NNII. Through education, mentorship, and advocacy, we provide women with the tools and resources they need to realize their full potential and make meaningful contributions to society. By investing in women's empowerment, we not only transform individual lives but also drive positive change for entire communities.",
-              image: "/pillars/H.-E.-Regina-Amadi-Njoku-150x150-b6fbb83b-e603-4d63-852a-4959a0f91856.png",
-              imageAlt: "H.E. Regina Amadi-Njoku",
+              image: "/about/core-values-3.png",
+              imageAlt: "NNII members — sisterhood, celebration and shared purpose",
             },
             {
               title: "Partnership",
               description:
                 "We are firm believers in the power of collaboration as encapsulated in our motto, “Partnering for development.” By working together across genders and sectors, we maximize our collective impact and address the challenges facing our communities. Through shared responsibility and mutual support, we build a stronger and more resilient society for all.",
-              image: "/pillars/justice-ukeje-150x150-b528135a-53b7-4561-8a53-3c47b18ddec2.png",
-              imageAlt: "Justice Ukeje",
+              image: "/about/core-values-4.png",
+              imageAlt: "NNII event — women participating, registration and engagement",
             },
           ].map((item) => (
             <article

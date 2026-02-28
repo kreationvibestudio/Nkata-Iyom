@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { AboutBanner } from "@/components/about/AboutBanner";
@@ -37,6 +36,23 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <Section variant="muted" id="vision-mission">
+        <div className="grid sm:grid-cols-2 gap-8">
+          <div>
+            <h2 className="font-display text-display-sm text-brand-900">Our Vision</h2>
+            <p className="mt-3 text-brand-700 leading-relaxed">
+              Building and supporting Igbo women to actualize their full potential and to preserve and enhance positive Igbo culture and environment.
+            </p>
+          </div>
+          <div>
+            <h2 className="font-display text-display-sm text-brand-900">Our Mission</h2>
+            <p className="mt-3 text-brand-700 leading-relaxed">
+              To rebuild national gender partnership for the advancement of equitable development.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       <Section variant="primary-subtle" id="core-values">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="font-display text-xl sm:text-display-md text-brand-900 heading-balance">
@@ -48,48 +64,6 @@ export default function AboutPage() {
           <p className="mt-4 text-brand-700 text-lg">
             Accountability, Respect, Integrity, Sisterhood, Equity — the values that guide everything we do at NNII.
           </p>
-        </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 max-w-4xl mx-auto">
-          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
-            <Image
-              src="/about/core-values-1.png"
-              alt="NNII conference — women engaged at round tables, dialogue and community"
-              width={600}
-              height={450}
-              className="w-full h-full object-cover"
-              sizes="(max-width: 1024px) 50vw, 25vw"
-            />
-          </div>
-          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
-            <Image
-              src="/about/core-values-2.png"
-              alt="NNII conference — community and partnership, Partnering for Development"
-              width={600}
-              height={450}
-              className="w-full h-full object-cover"
-              sizes="(max-width: 1024px) 50vw, 25vw"
-            />
-          </div>
-          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
-            <Image
-              src="/about/core-values-3.png"
-              alt="NNII members — sisterhood, celebration and shared purpose"
-              width={600}
-              height={450}
-              className="w-full h-full object-cover"
-              sizes="(max-width: 1024px) 50vw, 25vw"
-            />
-          </div>
-          <div className="rounded-xl overflow-hidden border border-brand-200/60 shadow-sm aspect-[4/3]">
-            <Image
-              src="/about/core-values-4.png"
-              alt="NNII event — women participating, registration and engagement"
-              width={600}
-              height={450}
-              className="w-full h-full object-cover"
-              sizes="(max-width: 1024px) 50vw, 25vw"
-            />
-          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-0">
           <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
@@ -122,23 +96,6 @@ export default function AboutPage() {
               We champion fairness and balance in leadership and opportunity. We believe in shared gender partnership where men and women contribute their quota towards sustainable development.
             </p>
           </article>
-        </div>
-      </Section>
-
-      <Section variant="muted">
-        <div className="grid sm:grid-cols-2 gap-8">
-          <div>
-            <h2 className="font-display text-display-sm text-brand-900">Our Mission</h2>
-            <p className="mt-3 text-brand-700 leading-relaxed">
-              To empower Igbo women through cultural preservation, leadership development, and community support, ensuring their voices and wisdom shape the future of our communities.
-            </p>
-          </div>
-          <div>
-            <h2 className="font-display text-display-sm text-brand-900">Our Vision</h2>
-            <p className="mt-3 text-brand-700 leading-relaxed">
-              A world where Igbo women lead with confidence, culture thrives across generations, and communities are strengthened by the collective wisdom of women.
-            </p>
-          </div>
         </div>
       </Section>
 
