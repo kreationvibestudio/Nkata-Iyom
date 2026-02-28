@@ -11,20 +11,10 @@ export function LoadingScreenClient() {
 
     const fadeTimer = window.setTimeout(() => {
       overlay.classList.add(styles.fadeOut);
+      overlay.setAttribute("aria-hidden", "true");
     }, 2000);
 
-    const onTransitionEnd = (e: TransitionEvent) => {
-      if (e.target !== overlay || e.propertyName !== "opacity") return;
-      overlay.remove();
-      overlay.removeEventListener("transitionend", onTransitionEnd);
-    };
-
-    overlay.addEventListener("transitionend", onTransitionEnd);
-
-    return () => {
-      window.clearTimeout(fadeTimer);
-      overlay.removeEventListener("transitionend", onTransitionEnd);
-    };
+    return () => window.clearTimeout(fadeTimer);
   }, []);
 
   return null;
