@@ -35,7 +35,7 @@ export default function AdvocacyPage() {
           <div className="mt-8 rounded-xl overflow-hidden border border-brand-200/60 shadow-sm">
             <Image
               src="/offerings/advocacy.png"
-              alt="Nkata Ndi Inyom Igbo advocacy — women in traditional attire at Emeka Udeze Innovation Hub"
+              alt="Nkata Ndi Inyom Igbo advocacy — leadership and community in traditional attire, partnering for development"
               width={1200}
               height={800}
               className="w-full h-auto object-cover"
