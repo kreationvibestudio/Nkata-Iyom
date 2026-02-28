@@ -56,7 +56,7 @@ export default function BoardPage() {
       </Section>
 
       <Section variant="primary-subtle">
-        <h2 className="font-display text-display-sm text-brand-900 mb-8">Our Leadership</h2>
+        <h2 className="font-display text-display-sm text-brand-900 mb-8">Board of Trustees</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {boardImages.map((member) => (
             <article

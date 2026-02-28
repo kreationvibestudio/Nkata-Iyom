@@ -1,6 +1,22 @@
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { AboutBanner } from "@/components/about/AboutBanner";
+
+const boardOfTrustees = [
+  { name: "Dr. Regina Amadi Njoku", title: "Chairman", image: "/about/H.-E.-Regina-Amadi-Njoku-150x150-d4ff800c-f96b-4164-b75b-45c5cbf7e108.png" },
+  { name: "Iyom Josephine Anenih, Esq. FNIM, mni, SCN", title: "Founder / President General", image: "/about/josephine-anenih-150x150-6c3925d4-8187-4fc2-812c-218cc1512999.png" },
+  { name: "Dr. Anne Okigbo", title: "Board Secretary / Vice President", image: "/about/Dr.-Ann-Okigbo-150x150-f7ebbc46-8f70-424a-be14-cfc0cfeb8617.png" },
+  { name: "Dr. Grace Okudo, AIG", title: "Member", image: "/about/Dr.-Grace-Okudo-150x150-5b702980-92a9-488b-a7c3-fced0662f3c4.png" },
+];
+
+const boardOfAdvisors = [
+  { name: "Dr. Sally Adukwu-Bolujoko, FNIM, OON", image: "/about/dr-sally-adukwu-bolujoko.png" },
+  { name: "Prof. Joy Ngozi Ezeilo (SAN), OON", image: "/about/prof-joy-ezeilo-150x150-42c428f2-11b9-44dc-94b7-197dbe0c1683.png" },
+  { name: "Prof. Uche Azikiwe, MFR", image: "/about/H.-E.-Prof-Uche-Azikiwe-150x150-cde06f24-cd32-4570-8487-dfa035689977.png" },
+  { name: "Hon. Justice Rose N. Ukeje, OFR", image: "/about/justice-ukeje-150x150-6e4235b9-e92a-44b7-81df-c1f5b60c9838.png" },
+  { name: "Amb. Nkem Wadibia Anyanwu", image: "/about/amb-nkem-anyawu-150x150-f0153a6e-b605-4884-bf76-76b49be3cde9.png" },
+];
 
 export const metadata = {
   title: "About Us",
@@ -99,7 +115,64 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section variant="primary-subtle" id="membership">
+      <Section variant="muted" id="board-of-trustees">
+        <h2 className="font-display text-display-md text-brand-900 heading-balance mb-8">
+          Board of Trustees
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {boardOfTrustees.map((member) => (
+            <article
+              key={member.name}
+              className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
+            >
+              <div className="relative aspect-[3/4] bg-brand-100">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+              <div className="p-4 flex flex-col flex-1">
+                <p className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
+                  {member.title}
+                </p>
+                <h3 className="font-display text-lg text-brand-900 mt-1">{member.name}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section variant="primary-subtle" id="board-of-advisors">
+        <h2 className="font-display text-display-md text-brand-900 heading-balance mb-8">
+          Board of Advisors
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8">
+          {boardOfAdvisors.map((member) => (
+            <article
+              key={member.name}
+              className="flex flex-col rounded-xl border border-brand-200/60 bg-surface overflow-hidden shadow-sm"
+            >
+              <div className="relative aspect-[3/4] bg-brand-100">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                />
+              </div>
+              <div className="p-4 flex flex-col flex-1">
+                <h3 className="font-display text-lg text-brand-900">{member.name}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section variant="muted" id="membership">
         <h2 className="font-display text-display-md text-brand-900 heading-balance mb-6">
           Membership
         </h2>
