@@ -1,0 +1,81 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.overlay.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dancerWrap {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transform-origin: center bottom;
+  animation: swayBounce 1.2s ease-in-out infinite;
+}
+
+.dancer {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: min(60vw, 320px);
+  height: auto;
+  object-fit: contain;
+}
+
+.dancerWrap::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 120%;
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(124, 58, 237, 0.25) 0%,
+    rgba(124, 58, 237, 0.12) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+  animation: glowPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes swayBounce {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(6px) translateY(-3px);
+  }
+  50% {
+    transform: translateX(-6px) translateY(2px);
+  }
+  75% {
+    transform: translateX(6px) translateY(-3px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
