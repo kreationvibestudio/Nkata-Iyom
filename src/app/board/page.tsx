@@ -9,10 +9,10 @@ export const metadata = {
 };
 
 const boardOfTrustees = [
-  { src: "/board/IMG_20231019_112001_729.jpg", name: "Dr. Regina Amadi Njoku", title: "Chairman" },
-  { src: "/board/IMG-20231016-WA0014.jpg", name: "Iyom Josephine Anenih, Esq. FNIM, mni, SCN", title: "Founder / President General" },
-  { src: "/board/dr-anne-okigbo.png", name: "Dr. Anne Okigbo", title: "Board Secretary / Vice President" },
-  { src: "/board/IMG_20231019_112018_820.jpg", name: "Dr. Grace Okudo, AIG", title: "Member" },
+  { src: "/about/prof-joy-ezeilo-150x150-42c428f2-11b9-44dc-94b7-197dbe0c1683.png", name: "Prof. Joy Ngozi Ezeilo (SAN), OON" },
+  { src: "/about/H.-E.-Prof-Uche-Azikiwe-150x150-cde06f24-cd32-4570-8487-dfa035689977.png", name: "Prof. Uche Azikiwe, MFR" },
+  { src: "/about/justice-ukeje-150x150-6e4235b9-e92a-44b7-81df-c1f5b60c9838.png", name: "Hon. Justice Rose N. Ukeje, OFR" },
+  { src: "/about/amb-nkem-anyawu-150x150-f0153a6e-b605-4884-bf76-76b49be3cde9.png", name: "Amb. Nkem Wadibia Anyanwu" },
 ];
 
 const boardOfAdvisors = [
@@ -71,9 +71,11 @@ export default function BoardPage() {
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
-                <p className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
-                  {member.title}
-                </p>
+                {member.title && (
+                  <p className="text-xs font-semibold text-primary-600 uppercase tracking-wider">
+                    {member.title}
+                  </p>
+                )}
                 <h3 className="font-display text-lg text-brand-900 mt-1">{member.name}</h3>
               </div>
             </article>
