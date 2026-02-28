@@ -8,9 +8,14 @@ import { SignOutButton } from "@/components/member/SignOutButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/board", label: "Board" },
-  { href: "/management", label: "Management" },
+  {
+    label: "About Us",
+    children: [
+      { href: "/about", label: "About Us" },
+      { href: "/board", label: "Board of Trustees" },
+      { href: "/management", label: "Management Team" },
+    ],
+  },
   {
     label: "What We Do",
     children: [
@@ -43,11 +48,14 @@ export function Header({ signedIn = false }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [offeringsOpen, setOfferingsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   const isResourcesActive =
     pathname.startsWith("/blog") || pathname.startsWith("/videos") || pathname.startsWith("/library");
   const isOfferingsActive =
     pathname === "/offerings" || pathname.startsWith("/offerings/");
+  const isAboutActive =
+    pathname === "/about" || pathname.startsWith("/board") || pathname.startsWith("/management");
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-brand-200 bg-surface/95 backdrop-blur-sm">
@@ -71,11 +79,12 @@ export function Header({ signedIn = false }: HeaderProps) {
           {navLinks.map((link) => {
             if ("children" in link) {
               const isOfferings = link.label === "What We Do";
-              const isOpen = isOfferings ? offeringsOpen : resourcesOpen;
-              const setIsOpen = isOfferings ? setOfferingsOpen : setResourcesOpen;
-              const isActive = isOfferings ? isOfferingsActive : isResourcesActive;
-              const menuId = isOfferings ? "offerings-menu" : "resources-menu";
-              const triggerId = isOfferings ? "offerings-trigger" : "resources-trigger";
+              const isAbout = link.label === "About Us";
+              const isOpen = isOfferings ? offeringsOpen : isAbout ? aboutOpen : resourcesOpen;
+              const setIsOpen = isOfferings ? setOfferingsOpen : isAbout ? setAboutOpen : setResourcesOpen;
+              const isActive = isOfferings ? isOfferingsActive : isAbout ? isAboutActive : isResourcesActive;
+              const menuId = isOfferings ? "offerings-menu" : isAbout ? "about-menu" : "resources-menu";
+              const triggerId = isOfferings ? "offerings-trigger" : isAbout ? "about-trigger" : "resources-trigger";
               return (
                 <div
                   key={link.label}

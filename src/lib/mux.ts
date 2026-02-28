@@ -54,7 +54,7 @@ export async function getPlaybackIdForAsset(assetId: string): Promise<string | n
 
   try {
     const mux = new Mux({ tokenId, tokenSecret });
-    const { data: asset } = await mux.video.assets.retrieve(assetId);
+    const asset = await mux.video.assets.retrieve(assetId);
     if (asset?.status !== "ready" || !asset.playback_ids?.[0]?.id) return null;
     return asset.playback_ids[0].id;
   } catch (err) {
