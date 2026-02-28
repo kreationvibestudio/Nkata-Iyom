@@ -12,7 +12,7 @@ const navLinks = [
     label: "About Us",
     children: [
       { href: "/about", label: "About Us" },
-      { href: "/board", label: "Board of Trustees" },
+      { href: "/board", label: "Our Leadership" },
       { href: "/management", label: "Management Team" },
     ],
   },

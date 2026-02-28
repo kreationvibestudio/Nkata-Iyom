@@ -22,8 +22,8 @@ const boardOfTrustees = [
 const boardOfAdvisors = [
   { src: "/board/IMG_20231019_112134_976.jpg", name: "Prof. Barth Nnaji", title: "Chairman" },
   { src: "/board/IMG_20231019_112143_350.jpg", name: "Patrick Okigbo III" },
-  { src: "/board/IMG_20231019_112156_833.jpg", name: "Agubuzu" },
-  { src: "/board/IMG_20231019_112209_688.jpg", name: "Gen. Abel Obi Umahi, Rtd." },
+  { src: "/board/IMG_20231019_112209_688.jpg", name: "Igwe Agubuzu" },
+  { src: "/board/IMG_20231019_112156_833.jpg", name: "Gen. Abel Obi Umahi, Rtd." },
   { src: "/board/IMG_20231019_112220_355.jpg", name: "Dike Chukwumerije" },
 ];
 
