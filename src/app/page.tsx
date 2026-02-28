@@ -2,16 +2,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
+import { MembershipDriveVideo } from "@/components/video/MembershipDriveVideo";
+import { getVideos, getPlaybackIdForAsset } from "@/lib/mux";
 
-export default function HomePage() {
+export default async function HomePage() {
+  let playbackId = process.env.MUX_MEMBERSHIP_DRIVE_PLAYBACK_ID ?? null;
+  if (!playbackId && process.env.MUX_MEMBERSHIP_DRIVE_ASSET_ID) {
+    playbackId = await getPlaybackIdForAsset(process.env.MUX_MEMBERSHIP_DRIVE_ASSET_ID);
+  }
+  if (!playbackId) {
+    playbackId = (await getVideos()).videos[0]?.playbackId ?? null;
+  }
   return (
     <>
       {/* Hero with banner */}
       <section className="relative min-h-[80dvh] sm:min-h-[85dvh] flex flex-col justify-center overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <Image
-            src="/main_banner_nkata.png"
-            alt="Nkata ndi Inyom Igbo community in traditional purple and gold attire"
+            src="/home_page_banner.png"
+            alt="Nkata Ndi Inyom Igbo Annual Conference 2023 — Women: A Unifying Force in Peace Building"
             fill
             className="object-cover object-center"
             priority
@@ -24,13 +33,13 @@ export default function HomePage() {
         </div>
         <div className="container-narrow section-padding relative z-10">
           <p className="text-sm font-medium text-primary-200 uppercase tracking-wider mb-4 opacity-0 animate-fade-in [animation-fill-mode:forwards]">
-            Nkata ndi Inyom Igbo
+            Nkata Ndi Inyom Igbo
           </p>
           <h1 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-display-xl text-white heading-balance max-w-3xl opacity-0 animate-fade-in-up [animation-fill-mode:forwards] [animation-delay:60ms] drop-shadow-sm">
-            Empowering Igbo Women Together
+            Empowering Igbo Women Through Shared Leadership and Culture
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl leading-relaxed opacity-0 animate-fade-in-up [animation-fill-mode:forwards] [animation-delay:180ms]">
-            Preserving our culture while fostering women’s leadership in Igbo communities through shared wisdom and strength.
+            Preserving our culture while fostering women’s leadership in Igbo communities through gender partnership.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 opacity-0 animate-fade-in-up [animation-fill-mode:forwards] [animation-delay:280ms]">
             <ButtonLink href="/join" size="lg">
@@ -153,23 +162,23 @@ export default function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center min-w-0">
           <div className="min-w-0">
             <h2 className="font-display text-xl sm:text-display-md lg:text-display-lg text-brand-900 heading-balance">
-              The Story Behind Nkata ndi Inyom Igbo
+              The Story Behind Nkata Ndi Inyom Igbo
             </h2>
             <div className="mt-6 space-y-4 text-brand-700 leading-relaxed">
               <p>
-                There is something powerful about women gathering with purpose. That is the spirit behind Nkata ndi Inyom Igbo.
+                There is something powerful about women gathering with purpose. That is the spirit behind Nkata Ndi Inyom Igbo.
               </p>
               <p>
-                Nkata ndi Inyom Igbo has become a respected space where Igbo women come together to share ideas, offer guidance, and strengthen one another. It was formed out of a clear need, to create a forum where women can speak openly, preserve cultural values, and contribute meaningfully to community development.
+                Nkata Ndi Inyom Igbo has become a respected space where Igbo women come together to share ideas, offer guidance, and strengthen one another. It was formed out of a clear need, to create a forum where women can speak openly, preserve cultural values, and contribute meaningfully to community development.
               </p>
               <p>
-                At its core, Nkata ndi Inyom Igbo focuses on dialogue, mentorship, and cultural continuity. Through discussions, programs, and outreach efforts, members support younger generations, promote unity among women, and encourage active participation in social and civic life.
+                At its core, Nkata Ndi Inyom Igbo focuses on dialogue, mentorship, and cultural continuity. Through discussions, programs, and outreach efforts, members support younger generations, promote unity among women, and encourage active participation in social and civic life.
               </p>
               <p>
                 The group also stands for gender inclusion and women's rights within the framework of Igbo culture. It believes that when women are informed, empowered, and organized, their voices carry weight in families, communities, and leadership spaces.
               </p>
               <p>
-                Nkata ndi Inyom Igbo is driven by commitment, shared values, and a clear vision to uplift Igbo women today and for the future.
+                Nkata Ndi Inyom Igbo is driven by commitment, shared values, and a clear vision to uplift Igbo women today and for the future.
               </p>
             </div>
             <ButtonLink href="/about" className="mt-8" variant="outline">
@@ -179,7 +188,7 @@ export default function HomePage() {
           <div className="relative rounded-2xl aspect-[4/3] overflow-hidden bg-brand-100/50">
             <Image
               src="/our-story.png"
-              alt="Our story — Nkata ndi Inyom Igbo"
+              alt="Our story — Nkata Ndi Inyom Igbo"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -188,59 +197,26 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Membership Drive Video */}
+      <Section variant="muted" id="membership-video">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-display text-xl sm:text-display-md text-brand-900 heading-balance mb-6 text-center">
+            Membership Drive
+          </h2>
+          <MembershipDriveVideo playbackId={playbackId} />
+        </div>
+      </Section>
+
       {/* Testimonial */}
       <Section variant="muted">
         <blockquote className="max-w-2xl mx-auto text-center px-2 sm:px-0">
           <p className="font-display text-lg sm:text-display-sm md:text-2xl text-brand-900 italic leading-relaxed">
-            “Nkata ndi Inyom Igbo has given me a platform to connect with like-minded women who are passionate about our culture and the development of our communities. I am proud to be part of this movement.”
+            “Nkata Ndi Inyom Igbo has given me a platform to connect with like-minded women who are passionate about our culture and the development of our communities. I am proud to be part of this movement.”
           </p>
           <footer className="mt-6">
             <cite className="not-italic font-semibold text-brand-800">Nkechi Okoli</cite>
           </footer>
         </blockquote>
-      </Section>
-
-      {/* Why Choose Us */}
-      <Section id="why-choose">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 lg:mb-14">
-          <h2 className="font-display text-xl sm:text-display-md lg:text-display-lg text-brand-900 heading-balance">
-            Why Choose Nkata ndi Inyom Igbo?
-          </h2>
-          <p className="mt-4 text-brand-700 text-lg">
-            We are dedicated to empowering women through cultural preservation, building a community of leaders guided by wisdom and mutual respect.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto min-w-0">
-          {[
-            {
-              title: "Community Leadership",
-              description:
-                "Our commitment to empowering women leaders creates a ripple effect, inspiring younger generations to step into roles that uplift our entire community.",
-            },
-            {
-              title: "Cultural Heritage",
-              description:
-                "By preserving our unique cultural identity, we ensure that the richness of Igbo traditions continues to thrive in our ever-changing world.",
-            },
-          ].map((item) => (
-            <Link
-              key={item.title}
-              href="/offerings"
-              className="group p-4 sm:p-6 rounded-xl border border-brand-200/60 bg-surface hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-w-0"
-            >
-              <h3 className="font-display text-display-sm text-brand-900 group-hover:text-primary-600 transition-colors">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-brand-700 leading-relaxed">{item.description}</p>
-              <span className="mt-4 inline-flex items-center text-sm font-medium text-primary-500 group-hover:text-primary-600">
-                Learn More
-                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </Link>
-          ))}
-        </div>
       </Section>
 
       {/* CTA */}

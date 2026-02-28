@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Nkata ndi Inyom Igbo. Join us, inquire about events, or learn how you can get involved.",
+    "Get in touch with Nkata Ndi Inyom Igbo. Join us, inquire about events, or learn how you can get involved.",
 };
 
 export default function ContactPage() {
@@ -27,17 +27,18 @@ export default function ContactPage() {
               <div className="p-4 rounded-lg bg-surface-muted border border-brand-200/60">
                 <p className="text-sm font-medium text-brand-600">Address</p>
                 <p className="text-brand-800 whitespace-pre-line">
-                  3 Umueze Street
-                  {"\n"}Amawbia
-                  {"\n"}Awka South LGA
-                  {"\n"}Anambra State.
+                  51 B Imoke Close, GRA
+                  {"\n"}Enugu
                 </p>
               </div>
               <div className="p-4 rounded-lg bg-surface-muted border border-brand-200/60">
                 <p className="text-sm font-medium text-brand-600">Phone</p>
-                <p className="text-brand-800">
-                  <a href="tel:+2348033139506" className="text-primary-500 hover:text-primary-600">
+                <p className="text-brand-800 space-y-1">
+                  <a href="tel:+2348033139506" className="block text-primary-500 hover:text-primary-600">
                     0803-313-9506
+                  </a>
+                  <a href="tel:+2349134410278" className="block text-primary-500 hover:text-primary-600">
+                    0913-441-0278
                   </a>
                 </p>
               </div>

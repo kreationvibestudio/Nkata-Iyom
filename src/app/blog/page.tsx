@@ -6,7 +6,7 @@ import { getBlogPosts } from "@/lib/blog";
 export const metadata = {
   title: "Blog",
   description:
-    "Stories, cultural insights, leadership advice, and updates from Nkata ndi Inyom Igbo.",
+    "Stories, cultural insights, leadership advice, and updates from Nkata Ndi Inyom Igbo.",
 };
 
 export const dynamic = "force-dynamic";

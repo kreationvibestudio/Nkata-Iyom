@@ -5,7 +5,7 @@ import { AboutBanner } from "@/components/about/AboutBanner";
 export const metadata = {
   title: "About Us",
   description:
-    "Nkata Ndi Inyom Igbo (NNII), founded by Iyom Josephine Anenih in 2020. Our story, key pillars, membership, and how to support us. Partnering for development.",
+    "Nkata Ndi Inyom Igbo (NNII), founded by Iyom Josephine Anenih in 2020. Our story, core values, membership, and how to support us. Partnering for development.",
 };
 
 export default function AboutPage() {
@@ -36,33 +36,47 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section variant="primary-subtle" id="pillars">
-        <h2 className="font-display text-xl sm:text-display-md text-brand-900 heading-balance mb-6 sm:mb-8">
-          Our Key Pillars
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 min-w-0">
+      <Section variant="primary-subtle" id="core-values">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <h2 className="font-display text-xl sm:text-display-md text-brand-900 heading-balance">
+            Our Core Values
+          </h2>
+          <p className="mt-2 text-xl sm:text-2xl font-semibold text-primary-600 tracking-wide" aria-label="A R I S E">
+            A.R.I.S.E
+          </p>
+          <p className="mt-4 text-brand-700 text-lg">
+            Accountability, Respect, Integrity, Sisterhood, Equity — the values that guide everything we do at NNII.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-w-0">
           <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
-            <h3 className="font-display text-display-sm text-brand-900">Dialogue & Conversations</h3>
+            <h3 className="font-display text-display-sm text-brand-900">Accountability</h3>
             <p className="mt-3 text-brand-700 leading-relaxed">
-              At NNII, we understand the power of dialogue and conversations. We believe that open and inclusive discussions are essential for understanding diverse perspectives, fostering unity, and finding innovative solutions to complex challenges. Through meaningful dialogue, we create spaces where everyone's voice is heard, valued, and respected. It's about coming together, sharing ideas, and building consensus for positive change.
+              We take responsibility for our actions and commitments. At NNII, we hold ourselves and each other to the highest standards of transparency and ethical conduct in all we do.
             </p>
           </article>
           <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
+            <h3 className="font-display text-display-sm text-brand-900">Respect</h3>
+            <p className="mt-3 text-brand-700 leading-relaxed">
+              We honour the dignity, perspectives, and contributions of every individual. Through mutual respect, we build a culture where every voice is valued and every member feels heard.
+            </p>
+          </article>
+          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
+            <h3 className="font-display text-display-sm text-brand-900">Integrity</h3>
+            <p className="mt-3 text-brand-700 leading-relaxed">
+              We act with honesty and consistency, aligning our words with our deeds. Integrity is the foundation of trust within our sisterhood and in all our partnerships.
+            </p>
+          </article>
+          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
+            <h3 className="font-display text-display-sm text-brand-900">Sisterhood</h3>
+            <p className="mt-3 text-brand-700 leading-relaxed">
+              We stand together as women united by shared purpose and heritage. Our sisterhood supports, strengthens, and uplifts one another through every challenge and triumph.
+            </p>
+          </article>
+          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0 sm:col-span-2 lg:col-span-1">
             <h3 className="font-display text-display-sm text-brand-900">Equity</h3>
             <p className="mt-3 text-brand-700 leading-relaxed">
-              Here at NNII, we are all about fairness and balance. We believe in shared gender partnership and governance where men and women contribute their quota towards sustainable development.
-            </p>
-          </article>
-          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
-            <h3 className="font-display text-display-sm text-brand-900">Empowerment</h3>
-            <p className="mt-3 text-brand-700 leading-relaxed">
-              Empowering women is at the heart of what we do at NNII. Through education, mentorship, and advocacy, we provide women with the tools and resources they need to realize their full potential and make meaningful contributions to society. By investing in women's empowerment, we not only transform individual lives but also drive positive change for entire communities.
-            </p>
-          </article>
-          <article className="p-4 sm:p-6 rounded-xl bg-surface border border-brand-200/60 min-w-0">
-            <h3 className="font-display text-display-sm text-brand-900">Partnership</h3>
-            <p className="mt-3 text-brand-700 leading-relaxed">
-              We are firm believers in the power of collaboration as encapsulated in our motto, “Partnering for development.” By working together across genders and sectors, we maximize our collective impact and address the challenges facing our communities. Through shared responsibility and mutual support, we build a stronger and more resilient society for all.
+              We champion fairness and balance in leadership and opportunity. We believe in shared gender partnership where men and women contribute their quota towards sustainable development.
             </p>
           </article>
         </div>
@@ -93,9 +107,9 @@ export default function AboutPage() {
           Nkata Ndi Inyom Igbo is all about equipping women and young girls to realise their full potential. An empowered woman is a force of resilience, determination and compassion, and we must collectively supply our women with all the resources they need to thrive. The importance of female participation in leadership, governance, and development cannot be over-emphasized, with the rising number of women recording success in these areas globally. To this effect, there is an urgent need for long-term and sustained support to widen the leadership space for women and to prepare our women for governance, commerce and decision-making positions.
         </p>
         <p className="text-brand-700 font-medium mb-2">Membership is available to:</p>
-        <ul className="list-disc list-inside text-brand-700 space-y-1">
-          <li>Females aged 18 and above</li>
-          <li>Those who have the empowerment of women and gender equality at heart</li>
+        <ul className="list-disc list-inside text-brand-700 space-y-2">
+          <li>All Igbo women — by descent or by marriage (aged 18 years and above)</li>
+          <li>Individuals who are committed to advancing the dignity, leadership, and meaningful participation of women</li>
           <li>Those interested in and aligned with the mission and vision of NNII</li>
         </ul>
         <div className="mt-8">
@@ -107,26 +121,10 @@ export default function AboutPage() {
         <h2 className="font-display text-display-md text-brand-900 heading-balance mb-6">
           Support Us
         </h2>
-        <p className="text-brand-700 leading-relaxed mb-8 max-w-2xl">
-          Kindly deposit your donations into the following account. Your support helps us equip women and young girls to realise their full potential and widen the leadership space for women.
+        <p className="text-brand-700 leading-relaxed mb-6 max-w-2xl">
+          Your support helps us equip women and young girls to realise their full potential and widen the leadership space for women.
         </p>
-        <div className="rounded-xl border border-brand-200 bg-primary-50/50 p-6 max-w-md">
-          <p className="text-sm font-medium text-brand-600 uppercase tracking-wider mb-4">Bank details</p>
-          <dl className="space-y-2 text-brand-800">
-            <div>
-              <dt className="text-sm text-brand-600">Account Name</dt>
-              <dd className="font-medium">Nkata Ndi Inyom Igbo Foundation</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-brand-600">Account Number</dt>
-              <dd className="font-medium font-mono">1024346943</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-brand-600">Bank</dt>
-              <dd className="font-medium">UBA Plc.</dd>
-            </div>
-          </dl>
-        </div>
+        <ButtonLink href="/donate">Donate</ButtonLink>
       </Section>
 
       <Section variant="primary-subtle">

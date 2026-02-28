@@ -39,20 +39,30 @@ export function AboutBanner() {
       className="relative min-h-[420px] xs:min-h-[460px] sm:min-h-[500px] md:min-h-[560px] overflow-hidden flex flex-col"
       aria-label="About Us"
     >
-      {/* Gradient background: deep navy to primary blue */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background:
-            "linear-gradient(155deg, #031530 0%, #0a2050 35%, #1549a8 70%, #257af8 100%)",
-        }}
-      />
+      {/* Banner image with gradient overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/main_banner_nkata.png"
+          alt="Nkata Ndi Inyom Igbo community in traditional purple and gold attire"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(155deg, rgba(3,21,48,0.85) 0%, rgba(10,32,80,0.6) 35%, rgba(76,29,149,0.5) 70%, rgba(124,58,237,0.4) 100%)",
+          }}
+        />
+      </div>
       {/* Soft radial glow for depth */}
       <div
         className="absolute inset-0 z-[1] opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 55%, rgba(8, 106, 254, 0.25) 0%, transparent 60%)",
+            "radial-gradient(ellipse 80% 60% at 50% 55%, rgba(124, 58, 237, 0.25) 0%, transparent 60%)",
         }}
       />
       {/* Subtle geometric pattern overlay */}

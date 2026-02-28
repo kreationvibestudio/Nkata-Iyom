@@ -6,7 +6,7 @@ import { getEvents } from "@/lib/events";
 export const metadata = {
   title: "Events",
   description:
-    "Upcoming workshops, meetings, and community events from Nkata ndi Inyom Igbo.",
+    "Upcoming workshops, meetings, and community events from Nkata Ndi Inyom Igbo.",
 };
 
 export const dynamic = "force-dynamic";

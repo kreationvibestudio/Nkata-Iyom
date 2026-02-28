@@ -9,20 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // From original nkatandiinyom.com (Astra theme)
-        // Primary blue: links, buttons, CTAs
+        // Deep purple brand colour
         primary: {
-          50: "#ebf5ff",
-          100: "#d6ebff",
-          200: "#b3d7ff",
-          300: "#80bfff",
-          400: "#4da6ff",
-          500: "#086afe",
-          600: "#257af8",
-          700: "#1a5fd4",
-          800: "#1549a8",
-          900: "#0f3380",
-          950: "#0a2050",
+          50: "#f5f3ff",
+          100: "#ede9fe",
+          200: "#ddd6fe",
+          300: "#c4b5fd",
+          400: "#a78bfa",
+          500: "#7c3aed",
+          600: "#6d28d9",
+          700: "#5b21b6",
+          800: "#4c1d95",
+          900: "#3b0764",
+          950: "#2e1065",
         },
         // Navy/slate: headings and body text (original color-2, color-3, color-8)
         brand: {

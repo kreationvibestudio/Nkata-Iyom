@@ -7,7 +7,8 @@ export type PageBannerVariant =
   | "videos"
   | "events"
   | "contact"
-  | "member";
+  | "member"
+  | "about";
 
 const VARIANT_STYLES: Record<
   PageBannerVariant,
@@ -48,6 +49,11 @@ const VARIANT_STYLES: Record<
       "linear-gradient(150deg, #020c1a 0%, #031530 30%, #0f3380 65%, #1a5fd4 100%)",
     radialPosition: "50% 55%",
   },
+  about: {
+    gradient:
+      "linear-gradient(155deg, #031530 0%, #0a2050 35%, #4c1d95 70%, #7c3aed 100%)",
+    radialPosition: "50% 55%",
+  },
 };
 
 interface PageBannerProps {
@@ -77,7 +83,7 @@ export function PageBanner({
       <div
         className="absolute inset-0 z-[1] opacity-40"
         style={{
-          background: `radial-gradient(ellipse 80% 70% at ${style.radialPosition}, rgba(8, 106, 254, 0.28) 0%, transparent 65%)`,
+          background: `radial-gradient(ellipse 80% 70% at ${style.radialPosition}, rgba(124, 58, 237, 0.28) 0%, transparent 65%)`,
         }}
       />
       {/* Subtle pattern */}

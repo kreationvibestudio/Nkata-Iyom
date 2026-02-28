@@ -6,7 +6,7 @@ import { getVideos } from "@/lib/mux";
 export const metadata = {
   title: "Video Library",
   description:
-    "Watch cultural content, talks, and events from Nkata ndi Inyom Igbo. Powered by Mux for reliable streaming.",
+    "Watch cultural content, talks, and events from Nkata Ndi Inyom Igbo. Powered by Mux for reliable streaming.",
 };
 
 export const dynamic = "force-dynamic";

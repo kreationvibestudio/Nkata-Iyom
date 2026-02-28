@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { createClient } from "@/lib/supabase/server";
+import { getProfile, hasMemberAccess } from "@/lib/profiles";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -27,12 +28,12 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Nkata ndi Inyom Igbo | Empowering Igbo Women Together",
-    template: "%s | Nkata ndi Inyom Igbo",
+    default: "Nkata Ndi Inyom Igbo | Empowering Igbo Women Through Shared Leadership and Culture",
+    template: "%s | Nkata Ndi Inyom Igbo",
   },
   description:
     "Preserving Igbo culture while fostering women's leadership in Igbo communities through shared wisdom and strength.",
-  keywords: ["Igbo", "women", "culture", "leadership", "Nkata ndi Inyom", "community"],
+  keywords: ["Igbo", "women", "culture", "leadership", "Nkata Ndi Inyom", "community"],
   openGraph: {
     type: "website",
   },
@@ -48,6 +49,8 @@ export default async function RootLayout({
 }>) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
+  const profile = user ? await getProfile(user.id) : null;
+  const showMemberLink = !!user && hasMemberAccess(profile);
 
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
@@ -62,7 +65,7 @@ export default async function RootLayout({
         <main id="main-content" className="flex-1 overflow-x-hidden min-w-0">
           {children}
         </main>
-        <Footer />
+        <Footer showMemberLink={showMemberLink} />
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 
 export const metadata = {
   title: "Privacy",
-  description: "Privacy policy for Nkata ndi Inyom Igbo.",
+  description: "Privacy policy for Nkata Ndi Inyom Igbo.",
 };
 
 export default function PrivacyPage() {

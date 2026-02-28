@@ -44,3 +44,21 @@ export async function getVideos(): Promise<{ videos: VideoItem[]; error?: string
     return { videos: [], error: err instanceof Error ? err.message : "Failed to list videos" };
   }
 }
+
+/** Get playback ID for a specific asset ID. Returns null if asset is not ready or has no playback ID. */
+export async function getPlaybackIdForAsset(assetId: string): Promise<string | null> {
+  const tokenId = process.env.MUX_TOKEN_ID;
+  const tokenSecret = process.env.MUX_TOKEN_SECRET;
+
+  if (!tokenId || !tokenSecret) return null;
+
+  try {
+    const mux = new Mux({ tokenId, tokenSecret });
+    const { data: asset } = await mux.video.assets.retrieve(assetId);
+    if (asset?.status !== "ready" || !asset.playback_ids?.[0]?.id) return null;
+    return asset.playback_ids[0].id;
+  } catch (err) {
+    console.error("Mux getPlaybackIdForAsset error:", err);
+    return null;
+  }
+}
